@@ -1,0 +1,10 @@
+#!/usr/local/bin/node
+
+var argv = require('optimist').argv;
+var pushfile = require('../lib/pushfile');
+
+if (argv._.length > 0) {
+  pushfile.pf(argv._.join(' '));
+} else {
+  console.log('Please include file to push: $ ./bin/pushfile <FILENAME>');
+}
