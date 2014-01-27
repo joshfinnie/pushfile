@@ -1,10 +1,24 @@
 #!/usr/local/bin/node
 
-var argv = require('optimist').argv;
+var optimist = require('optimist');
 var pushfile = require('../lib/pushfile');
 
-if (argv._.length > 0) {
-  pushfile.pf(argv._.join(' '));
+var argv = optimist
+  .usage("Pushes file to S3 using a shortened name.\n\nUsage: $0 [options] <file>")
+  .boolean("u")
+  .alias("u", "unique")
+  .describe("u", "Gives a unique, timestamped hash for uploaded filename.")
+  .string("h")
+  .alias("h", "help")
+  .describe("h", "Print usage info")
+	.argv;
+
+if (argv._.length == 0) {
+	optimist.showHelp();
+} else if (argv.h || argv.help) {
+  optimist.showHelp();
+} else if (argv.u || argv.unique) {
+  pushfile.pf(argv._.join(' '), unique=true);
 } else {
-  console.log('Please include file to push: $ ./bin/pushfile <FILENAME>');
+  pushfile.pf(argv._.join(' '), unique=false);
 }
