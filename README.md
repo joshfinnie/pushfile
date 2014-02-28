@@ -5,7 +5,7 @@ A node.js application that pushes a file to S3 and gives you a short URL.
 [![Build Status](https://travis-ci.org/joshfinnie/pushfile.png?branch=master)](https://travis-ci.org/joshfinnie/pushfile)
 [![Dependency Status](https://david-dm.org/joshfinnie/pushfile.svg?theme=shields.io)](https://david-dm.org/joshfinnie/pushfile)
 [![devDependency Status](https://david-dm.org/joshfinnie/pushfile/dev-status.svg?theme=shields.io)](https://david-dm.org/joshfinnie/pushfile#info=devDependencies)
-[![NPM Version](http://img.shields.io/npm/v/pushfile.svg)](http://img.shields.io/npm/v/pushfile.svg)
+[![NPM Version](http://img.shields.io/npm/v/pushfile.svg)](https://www.npmjs.org/package/pushfile)
 
 
 ## Installation
