@@ -1,6 +1,7 @@
 {
   "name": "pushfile",
-  "version": "0.0.1",
+  "preferGlobal": true,
+  "version": "0.1.0",
   "description": "Pushes a file to S3 and gives you a short URL.",
   "main": "bin/pushfile",
   "scripts": {
@@ -10,20 +11,29 @@
     "type": "git",
     "url": "https://github.com/joshfinnie/pushfile.git"
   },
-  "author": "Josh Finnie",
+  "author": "Josh Finnie <josh@jfin.us>",
+  "contributors": [
+    {
+      "name": "Josh Finnie",
+      "email": "josh@jfin.us"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/joshfinnie/pushfile/issues"
   },
   "homepage": "https://github.com/joshfinnie/pushfile",
   "devDependencies": {
-    "mocha": "~1.17.0"
+    "mocha": "1.17.0"
   },
   "dependencies": {
-    "optimist": "~0.6.0",
-    "s3": "~0.3.1",
-    "hashids": "~0.3.3",
-    "copy-paste": "~0.1.0",
-    "prompt": "~0.2.12"
+    "optimist": "0.6.0",
+    "s3": "0.3.1",
+    "hashids": "0.3.3",
+    "copy-paste": "0.2.0",
+    "prompt": "0.2.12"
+  },
+  "engine": {
+    "node": ">=0.10"
   }
 }
