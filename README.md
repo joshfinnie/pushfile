@@ -11,14 +11,14 @@ Download the repo, and update the configuration file.
 
 ### Update Config
 
-Add your [AWS](http://aws.amazon.com/) `key`, `secret`, and `bucket` information to `s3Creds.json`.
+To create a config file, just run `pushfile --configuration` or copy the example config file to your home directory and rename it `.pushfile.json`.
 
 ## Adding pushfile to your path
 
 Simply add a symbolic link to your `/usr/local/bin`.
 
     $ ln -s /path/to/repo/with/pushfile/bin/pushfile /usr/local/bin/pushfile
-    
+
 This allows you to just push the file from your command line.
 
     $ pushfile <FILE>
