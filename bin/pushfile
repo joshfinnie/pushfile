@@ -2,24 +2,24 @@
 
 var optimist = require('optimist');
 var pushfile = require('../lib/pushfile');
-var config;
+var config, unique;
 
 var version = require('../package').version;
 
 var argv = optimist
-  .usage("Pushes file to S3 using a shortened name.\n\nVersion: "+ version + "\n\nUsage: $0 [options] <file>")
-  .boolean("u")
-  .alias("u", "unique")
-  .describe("u", "Gives a unique, timestamped hash for uploaded filename.")
-  .boolean("c")
-  .alias("c", "configure")
-  .describe("c", "Create a configuration file.")
-  .string("h")
-  .alias("h", "help")
-  .describe("h", "Print usage info")
+  .usage('Pushes file to S3 using a shortened name.\n\nVersion: ' + version + '\n\nUsage: $0 [options] <file>')
+  .boolean('u')
+  .alias('u', 'unique')
+  .describe('u', 'Gives a unique, timestamped hash for uploaded filename.')
+  .boolean('c')
+  .alias('c', 'configure')
+  .describe('c', 'Create a configuration file.')
+  .string('h')
+  .alias('h', 'help')
+  .describe('h', 'Print usage info')
   .argv;
 
-if (argv._.length == 0 && !argv.c) {
+if (argv._.length === 0 && !argv.c) {
   optimist.showHelp();
 } else if (argv.h || argv.help) {
   optimist.showHelp();
