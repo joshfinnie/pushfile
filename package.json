@@ -1,7 +1,7 @@
 {
   "name": "pushfile",
   "preferGlobal": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pushes a file to S3 and gives you a short URL.",
   "main": "bin/pushfile",
   "scripts": {
@@ -24,10 +24,10 @@
   },
   "homepage": "https://github.com/joshfinnie/pushfile",
   "devDependencies": {
-    "mocha": "1.17.0"
+    "mocha": "1.17.1"
   },
   "dependencies": {
-    "optimist": "0.6.0",
+    "optimist": "0.6.1",
     "s3": "0.3.1",
     "hashids": "0.3.3",
     "copy-paste": "0.2.0",
