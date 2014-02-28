@@ -3,6 +3,8 @@
 
 A node.js application that pushes a file to S3 and gives you a short URL.
 
+[![Build Status](https://travis-ci.org/joshfinnie/pushfile.png?branch=master)](https://travis-ci.org/joshfinnie/pushfile)
+
 ## Installation
 
 Download the repo, and update the configuration file.
