@@ -1,26 +1,23 @@
 # pushfile
 
-
 A node.js application that pushes a file to S3 and gives you a short URL.
 
-[![Build Status](https://travis-ci.org/joshfinnie/pushfile.png?branch=master)](https://travis-ci.org/joshfinnie/pushfile)
+[![Build Status](http://img.shields.io/travis/joshfinnie/pushfile.svg)](https://travis-ci.org/joshfinnie/pushfile)
+[![Dependency Status](https://david-dm.org/joshfinnie/pushfile.svg?theme=shields.io)](https://david-dm.org/joshfinnie/pushfile)
+[![devDependency Status](https://david-dm.org/joshfinnie/pushfile/dev-status.svg?theme=shields.io)](https://david-dm.org/joshfinnie/pushfile#info=devDependencies)
+[![NPM Version](http://img.shields.io/npm/v/pushfile.svg)](http://img.shields.io/npm/v/pushfile.svg)
+
 
 ## Installation
 
-Download the repo, and update the configuration file.
+To install PushFile, simply run `npm install -g pushfile`. This will install `PushFile` globally on your machine.
 
-    $ git clone https://github.com/joshfinnie/pushfile.git
-
-### Update Config
+### Create a Config File
 
 To create a config file, just run `pushfile --configuration` or copy the example config file to your home directory and rename it `.pushfile.json`.
 
-## Adding pushfile to your path
+## Usage
 
-Simply add a symbolic link to your `/usr/local/bin`.
+Once your configuration file is created pushing files to S3 is simple:
 
-    $ ln -s /path/to/repo/with/pushfile/bin/pushfile /usr/local/bin/pushfile
-
-This allows you to just push the file from your command line.
-
-    $ pushfile <FILE>
+    $ pushfile /path/to/file.ext
