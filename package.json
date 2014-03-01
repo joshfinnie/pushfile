@@ -1,7 +1,7 @@
 {
   "name": "pushfile",
   "preferGlobal": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Pushes a file to S3 and gives you a URL.",
   "main": "bin/pushfile",
   "bin": {
@@ -19,6 +19,9 @@
     {
       "name": "Josh Finnie",
       "email": "josh@jfin.us"
+    },
+    {
+      "name": "Will Laurance"
     }
   ],
   "license": "MIT",
