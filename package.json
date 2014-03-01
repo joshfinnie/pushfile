@@ -2,7 +2,7 @@
   "name": "pushfile",
   "preferGlobal": true,
   "version": "0.1.1",
-  "description": "Pushes a file to S3 and gives you a short URL.",
+  "description": "Pushes a file to S3 and gives you a URL.",
   "main": "bin/pushfile",
   "bin": {
     "pushfile": "./bin/pushfile"
