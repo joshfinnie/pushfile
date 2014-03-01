@@ -4,6 +4,9 @@
   "version": "0.1.1",
   "description": "Pushes a file to S3 and gives you a short URL.",
   "main": "bin/pushfile",
+  "bin": {
+    "pushfile": "./bin/pushfile"
+  },
   "scripts": {
     "test": "mocha"
   },

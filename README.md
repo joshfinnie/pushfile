@@ -10,7 +10,7 @@ A node.js application that pushes a file to S3 and gives you a short URL.
 
 ## Installation
 
-To install PushFile, simply run `npm install -g pushfile`. This will install `PushFile` globally on your machine.
+To install PushFile, simply run `npm install -g pushfile`. This will install `pushfile` globally on your machine.
 
 ### Create a Config File
 
