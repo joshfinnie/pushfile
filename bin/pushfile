@@ -1,10 +1,10 @@
-#!/usr/local/bin/node
+#!/usr/bin/env node
 
 var optimist = require('optimist');
-var pushfile = require('../lib/pushfile');
+var pushfile = require(__dirname + '/../lib/pushfile');
 var config, unique;
 
-var version = require('../package').version;
+var version = require(__dirname + '/../package').version;
 
 var argv = optimist
   .usage('Pushes file to S3 using a shortened name.\n\nVersion: ' + version + '\n\nUsage: $0 [options] <file>')
