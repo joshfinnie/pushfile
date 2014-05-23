@@ -1,7 +1,7 @@
 {
   "name": "pushfile",
   "preferGlobal": true,
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Pushes a file to S3 and gives you a URL.",
   "main": "bin/pushfile",
   "bin": {
@@ -22,6 +22,9 @@
     },
     {
       "name": "Will Laurance"
+    },
+    {
+      "name": "Matthew Chase Whittemore"
     }
   ],
   "license": "MIT",

@@ -21,3 +21,7 @@ To create a config file, just run `pushfile --configuration` or copy the example
 Once your configuration file is created pushing files to S3 is simple:
 
     $ pushfile /path/to/file.ext
+
+## Changelog
+
+0.2.0 - Implemented feature that turns all pushed files public by default.
