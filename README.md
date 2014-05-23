@@ -1,6 +1,6 @@
 # pushfile
 
-A node.js application that pushes a file to S3 and gives you a URL.
+A node.js application that pushes a file to S3 and gives you a URL. Files are public by default.
 
 [![Build Status](https://travis-ci.org/joshfinnie/pushfile.png?branch=master)](https://travis-ci.org/joshfinnie/pushfile)
 [![Dependency Status](https://david-dm.org/joshfinnie/pushfile.svg?theme=shields.io)](https://david-dm.org/joshfinnie/pushfile)
