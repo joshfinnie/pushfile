@@ -19,14 +19,26 @@ var argv = optimist
   .describe('h', 'Print usage info')
   .argv;
 
-if (argv._.length === 0 && !argv.c) {
+var argv_Length = argv._.length;
+var configure = argv.c || argv.configure;
+var unique = argv.u || argv.unique;
+var help = argv.h || argv.help;
+var configure = argv.c || argv.configure;
+var configure = argv.c || argv.configure;
+
+
+if (argv_Length === 0 && !configure) {
   optimist.showHelp();
-} else if (argv.h || argv.help) {
+}
+if (help) {
   optimist.showHelp();
-} else if (argv.c || argv.configure) {
+}
+if (configure) {
   pushfile.createConfig();
-} else if (argv.u || argv.unique) {
+}
+if (unique && argv_Length > 0) {
   pushfile.pf(argv._.join(' '), unique=true);
-} else {
+} 
+if (argv_Length > 0) {
   pushfile.pf(argv._.join(' '), unique=false);
 }
