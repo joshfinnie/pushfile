@@ -1,8 +1,8 @@
 {
   "name": "pushfile",
   "preferGlobal": true,
-  "version": "0.2.1",
-  "description": "Pushes a file to S3 and gives you a URL.",
+  "version": "0.2.2",
+  "description": "Command line app that pushes a file to S3 and gives you a URL.",
   "main": "bin/pushfile",
   "bin": {
     "pushfile": "./bin/pushfile"
@@ -33,13 +33,13 @@
   },
   "homepage": "https://github.com/joshfinnie/pushfile",
   "devDependencies": {
-    "mocha": "1.19.0"
+    "mocha": "1.21.3"
   },
   "dependencies": {
     "optimist": "0.6.1",
     "s3": "0.3.1",
     "hashids": "0.3.3",
-    "copy-paste": "0.2.0",
+    "copy-paste": "0.3.0",
     "prompt": "0.2.13"
   },
   "engine": {
