@@ -15,6 +15,7 @@ To install PushFile, simply run `npm install -g pushfile`. This will install `pu
 ### Create a Config File
 
 To create a config file, just run `pushfile --configuration` or copy the example config file to your home directory and rename it `.pushfile.json`.
+
 ### AWS Credentials
 
 You can go [here](https://console.aws.amazon.com/iam/home?#security_credential) to get your AWS credentials.
@@ -25,6 +26,12 @@ Once your configuration file is created pushing files to S3 is simple:
 
     $ pushfile /path/to/file.ext
 
+To create a unique file name, you can use the `-u` flag:
+
+    $ pushfile -u /path/to/file.ext
+
 ## Changelog
 
-0.2.0 - Implemented feature that turns all pushed files public by default.
+0.3 - Implenmeted PushFile using the native AWS SDK instead of out-dated package
+
+0.2 - Implemented feature that turns all pushed files public by default.

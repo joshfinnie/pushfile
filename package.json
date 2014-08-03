@@ -1,7 +1,7 @@
 {
   "name": "pushfile",
   "preferGlobal": true,
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Command line app that pushes a file to S3 and gives you a URL.",
   "main": "bin/pushfile",
   "bin": {
@@ -36,10 +36,11 @@
     "mocha": "1.21.3"
   },
   "dependencies": {
-    "optimist": "0.6.1",
-    "s3": "0.3.1",
-    "hashids": "0.3.3",
+    "aws-sdk": "2.0.11",
     "copy-paste": "0.3.0",
+    "hashids": "0.3.3",
+    "mime": "^1.2.11",
+    "optimist": "0.6.1",
     "prompt": "0.2.13"
   },
   "engine": {
