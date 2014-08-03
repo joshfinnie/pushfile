@@ -15,6 +15,9 @@ To install PushFile, simply run `npm install -g pushfile`. This will install `pu
 ### Create a Config File
 
 To create a config file, just run `pushfile --configuration` or copy the example config file to your home directory and rename it `.pushfile.json`.
+### AWS Credentials
+
+You can go [here](https://console.aws.amazon.com/iam/home?#security_credential) to get your AWS credentials.
 
 ## Usage
 
