@@ -1,6 +1,6 @@
 # pushfile
 
-A node.js application that pushes a file to S3 and gives you a URL.
+A node.js application that pushes a file to S3 and gives you a URL. Files are public by default.
 
 [![Build Status](https://travis-ci.org/joshfinnie/pushfile.png?branch=master)](https://travis-ci.org/joshfinnie/pushfile)
 [![Dependency Status](https://david-dm.org/joshfinnie/pushfile.svg?theme=shields.io)](https://david-dm.org/joshfinnie/pushfile)
@@ -24,3 +24,7 @@ You can go [here](https://console.aws.amazon.com/iam/home?#security_credential) 
 Once your configuration file is created pushing files to S3 is simple:
 
     $ pushfile /path/to/file.ext
+
+## Changelog
+
+0.2.0 - Implemented feature that turns all pushed files public by default.
