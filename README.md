@@ -32,6 +32,8 @@ To create a unique file name, you can use the `-u` flag:
 
 ## Changelog
 
+0.4 - Replaced `Optimist` with `nomnom` for command line args parsing. Bumped all versions and updated AWS SDK to use `upload` instead of `push`.
+
 0.3 - Implenmeted PushFile using the native AWS SDK instead of out-dated package
 
 0.2 - Implemented feature that turns all pushed files public by default.
