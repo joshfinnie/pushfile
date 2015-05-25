@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/joshfinnie/pushfile",
   "devDependencies": {
-    "mocha": "1.21.3"
+    "mocha": "2.2.5"
   },
   "dependencies": {
     "aws-sdk": "2.1.30",
