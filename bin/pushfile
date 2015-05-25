@@ -1,44 +1,49 @@
 #!/usr/bin/env node
 
-var optimist = require('optimist');
+var opts = require('nomnom');
 var pushfile = require(__dirname + '/../lib/pushfile');
-var config, unique;
 
 var version = require(__dirname + '/../package').version;
 
-var argv = optimist
-  .usage('Pushes file to S3 using a shortened name.\n\nVersion: ' + version + '\n\nUsage: $0 [options] <file>')
-  .boolean('u')
-  .alias('u', 'unique')
-  .describe('u', 'Gives a unique, timestamped hash for uploaded filename.')
-  .boolean('c')
-  .alias('c', 'configure')
-  .describe('c', 'Create a configuration file.')
-  .string('h')
-  .alias('h', 'help')
-  .describe('h', 'Print usage info')
-  .argv;
+opts
+  .option('file', {
+    position: 0,
+    help: 'Path to file you wish to push to S3.',
+  })
+  .option('unique', {
+    abbr: 'u',
+    metavar: '[file]',
+    flag: true,
+    help: 'Gives a unique, timestamped hash for uploaded filename.'
+  })
+  .option('configure', {
+    abbr: 'c',
+    flag: true,
+    help: 'Create a configuration file.'
+  })
+  .option('version', {
+    abbr: 'v',
+    flag: true,
+    help: 'Prints version.',
+    callback: function() {
+      return "Version: " + version  
+    }
+  });
 
-var argv_Length = argv._.length;
-var configure = argv.c || argv.configure;
+var argv = opts.parse();
+
+var argvLength = argv._.length;
 var unique = argv.u || argv.unique;
-var help = argv.h || argv.help;
-var configure = argv.c || argv.configure;
-var configure = argv.c || argv.configure;
 
-
-if (argv_Length === 0 && !configure) {
-  optimist.showHelp();
-}
-if (help) {
-  optimist.showHelp();
-}
-if (configure) {
+if (argv.configure) {
   pushfile.createConfig();
 }
-if (unique && argv_Length > 0) {
+if (unique && argvLength > 0) {
   pushfile.pf(argv._.join(' '), unique=true);
 } 
-if (argv_Length > 0) {
+if (unique && argvLength < 0) {
+  console.log("no filename...")
+}
+if (!unique && argvLength > 0) {
   pushfile.pf(argv._.join(' '), unique=false);
 }
