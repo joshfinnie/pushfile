@@ -77,7 +77,7 @@ export function createConfig() {
             customURL: { description: 'Enter your custom URL (not required)' }
         }
     };
-    prompt.get(schema, (err, result) => {
+    Prompt.get(schema, (err, result) => {
         if (err)
             throw err;
         const configFile = {

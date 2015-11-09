@@ -1,49 +1,38 @@
 #!/usr/bin/env node
 
-var opts = require('nomnom');
+var opts = require('commander');
 var pushfile = require(__dirname + '/../lib/pushfile');
 
 var version = require(__dirname + '/../package').version;
 
 opts
-  .option('file', {
-    position: 0,
-    help: 'Path to file you wish to push to S3.',
-  })
-  .option('unique', {
-    abbr: 'u',
-    metavar: '[file]',
-    flag: true,
-    help: 'Gives a unique, timestamped hash for uploaded filename.'
-  })
-  .option('configure', {
-    abbr: 'c',
-    flag: true,
-    help: 'Create a configuration file.'
-  })
-  .option('version', {
-    abbr: 'v',
-    flag: true,
-    help: 'Prints version.',
-    callback: function() {
-      return "Version: " + version  
-    }
+  .version(version)
+  .usage('[options] <file ...>')
+  .option('-u, --unique', 'Gives a unique hash for uploaded file.')
+  .option('-c, --configure', 'Create a configuration file.')
+  .option('-v, --version', 'Prints Version');
+
+opts
+  .on('--help', function(){
+    console.log('  Examples:');
+    console.log('');
+    console.log('    $ pushfile -u <FILENAME>');
+    console.log('    $ pushfile <FILENAME>');
+    console.log('    $ pushfile -v');
+    console.log('    $ pushfile -c');
+    console.log('');
   });
 
-var argv = opts.parse();
+opts.parse(process.argv);
 
-var argvLength = argv._.length;
-var unique = argv.u || argv.unique;
+var optsLength = opts.args.length;
 
-if (argv.configure) {
+if (opts.configure) {
   pushfile.createConfig();
 }
-if (unique && argvLength > 0) {
-  pushfile.pushfile(argv._.join(' '), unique=true);
+else if (optsLength > 0) {
+  pushfile.pushfile(opts.args[0], unique=opts.unique);
 } 
-if (!unique && argvLength > 0) {
-  pushfile.pushfile(argv._.join(' '), unique=false);
-}
-if (argvLength <= 0) {
+else if (optsLength <= 0) {
   console.log("no filename...")
 }
