@@ -39,11 +39,11 @@ if (argv.configure) {
   pushfile.createConfig();
 }
 if (unique && argvLength > 0) {
-  pushfile.pf(argv._.join(' '), unique=true);
+  pushfile.pushfile(argv._.join(' '), unique=true);
 } 
-if (unique && argvLength < 0) {
-  console.log("no filename...")
-}
 if (!unique && argvLength > 0) {
-  pushfile.pf(argv._.join(' '), unique=false);
+  pushfile.pushfile(argv._.join(' '), unique=false);
+}
+if (argvLength <= 0) {
+  console.log("no filename...")
 }

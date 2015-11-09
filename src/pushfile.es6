@@ -1,49 +1,22 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.pushfile = pushfile;
-exports.createConfig = createConfig;
-
-var _fs = require('fs');
-
-var _fs2 = _interopRequireDefault(_fs);
-
-var _crypto = require('crypto');
-
-var _crypto2 = _interopRequireDefault(_crypto);
-
-var _awsSdk = require('aws-sdk');
-
-var _awsSdk2 = _interopRequireDefault(_awsSdk);
-
-var _copyPaste = require('copy-paste');
-
-var _copyPaste2 = _interopRequireDefault(_copyPaste);
-
-var _prompt = require('prompt');
-
-var _prompt2 = _interopRequireDefault(_prompt);
-
-var _mime = require('mime');
-
-var _mime2 = _interopRequireDefault(_mime);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import fs from 'fs';
+import crypto from 'crypto';
+import AWS from 'aws-sdk';
+import Copy from 'copy-paste';
+import Prompt from 'prompt';
+import mime from 'mime';
 
 let hashfile = require('./hashfile');
 
-function pushfile(filename, unique) {
+export function pushfile(filename, unique) {
     let s3Bucket;
     let config;
     try {
         config = require(`${ process.env.HOME }/.pushfile.json`);
-        _awsSdk2.default.config.update({
+        AWS.config.update({
             accessKeyId: config.awsKey,
             secretAccessKey: config.awsSecret
         });
-        s3Bucket = new _awsSdk2.default.S3({ params: { Bucket: config.s3Bucket } });
+        s3Bucket = new AWS.S3({ params: { Bucket: config.s3Bucket } });
     } catch (e) {
         console.log(e);
         console.log('Looks like your PushFile config file is missing.\nPlease run `pushfile --configuration` to set up.\n');
@@ -57,8 +30,8 @@ function pushfile(filename, unique) {
         salt = 'wR2BXqWhHC9b4kbgl6qNei9d';
     }
     hashfile.hash(filename, salt, newFilename => {
-        let contentType = _mime2.default.lookup(filename);
-        _fs2.default.readFile(filename, (err, fileBuffer) => {
+        let contentType = mime.lookup(filename);
+        fs.readFile(filename, (err, fileBuffer) => {
             const params = {
                 Key: newFilename,
                 ACL: 'public-read',
@@ -71,12 +44,12 @@ function pushfile(filename, unique) {
                 } else {
                     if (typeof config.url === 'undefined') {
                         console.log('File is available at', url);
-                        _copyPaste2.default.copy(url);
+                        Copy.copy(url);
                         return;
                     } else {
                         const location = `${ config.url }/${ newFilename }`;
                         console.log('File is available at', location);
-                        _copyPaste2.default.copy(location);
+                        Copy.copy(location);
                         return;
                     }
                 }
@@ -85,8 +58,8 @@ function pushfile(filename, unique) {
     });
 };
 
-function createConfig() {
-    _prompt2.default.start();
+export function createConfig() {
+    Prompt.start();
     const schema = {
         properties: {
             awsClientKey: {
@@ -105,7 +78,8 @@ function createConfig() {
         }
     };
     prompt.get(schema, (err, result) => {
-        if (err) throw err;
+        if (err)
+            throw err;
         const configFile = {
             'awsKey': result.awsClientKey,
             'awsSecret': result.awsSecretKey,
@@ -114,8 +88,9 @@ function createConfig() {
         if (result.customURL) {
             configFile.url = result.customURL;
         }
-        _fs2.default.writeFile(`${ process.env.HOME }/.pushfile.json`, JSON.stringify(configFile), err => {
-            if (err) throw err;
+        fs.writeFile(`${ process.env.HOME }/.pushfile.json`, JSON.stringify(configFile), err => {
+            if (err)
+                throw err;
             console.log('Configuration file was written.');
         });
     });
