@@ -7,7 +7,7 @@ import mime from 'mime';
 
 let hashfile = require('./hashfile');
 
-export function pushfile(filename, unique) {
+export function pushfile(filename, unique, privateACL) {
     let s3Bucket;
     let config;
     try {
@@ -31,10 +31,14 @@ export function pushfile(filename, unique) {
     }
     hashfile.hash(filename, salt, newFilename => {
         let contentType = mime.lookup(filename);
+        let fileACL = 'public-read'
+        if (privateACL) {
+          fileACL = 'private';
+        }
         fs.readFile(filename, (err, fileBuffer) => {
             const params = {
                 Key: newFilename,
-                ACL: 'public-read',
+                ACL: fileACL,
                 Body: fileBuffer,
                 ContentType: contentType
             };

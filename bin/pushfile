@@ -10,6 +10,7 @@ opts
   .usage('[options] <file ...>')
   .option('-u, --unique', 'Gives a unique hash for uploaded file.')
   .option('-c, --configure', 'Create a configuration file.')
+  .option('-p, --private', 'Makes the file, when pushed, private.')
   .option('-v, --version', 'Prints Version');
 
 opts
@@ -20,6 +21,7 @@ opts
     console.log('    $ pushfile <FILENAME>');
     console.log('    $ pushfile -v');
     console.log('    $ pushfile -c');
+    console.log('    $ pushfile -p');
     console.log('');
   });
 
@@ -31,7 +33,7 @@ if (opts.configure) {
   pushfile.createConfig();
 }
 else if (optsLength > 0) {
-  pushfile.pushfile(opts.args[0], unique=opts.unique);
+  pushfile.pushfile(opts.args[0], unique=opts.unique, privateACL=opts.private);
 } 
 else if (optsLength <= 0) {
   console.log("no filename...")
