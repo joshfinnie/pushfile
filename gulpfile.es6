@@ -1,27 +1,31 @@
 import gulp from 'gulp';
 
 import babel from 'gulp-babel';
-import plumber from 'gulp-plumber';
 import uglify from 'gulp-uglify';
 import concat from 'gulp-concat';
+import pump from 'pump';
 
-gulp.task('babel', () => {
-    gulp.src('src/*.es6')
-        .pipe(plumber())
-        .pipe(babel())
-        .pipe(gulp.dest('lib'));
+gulp.task('babel', (cb) => {
+    pump([
+        gulp.src('src/*.es6'),
+        babel(),
+        gulp.dest('lib')
+    ], cb);
 });
 
-gulp.task('minify', () => {
-    gulp.src('src/babel/*.js')
-        .pipe(plumber())
-        .pipe(concat('app.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('lib'));
-})
+gulp.task('minify', (cb) => {
+    pump([
+        gulp.src('lib/*.js'),
+        concat('app.js'),
+        uglify({ 
+            mangle: false, 
+        }),
+        gulp.dest('lib')
+    ], cb);
+});
 
 gulp.task('watch', () => {
     gulp.watch('src/*.es6', ['babel', 'minify'])
-})
+});
 
 gulp.task('default', ['babel', 'minify', 'watch']);
