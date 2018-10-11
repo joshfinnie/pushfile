@@ -1,18 +1,20 @@
 {
   "name": "pushfile",
-  "preferGlobal": true,
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "Command line app that pushes a file to S3 and gives you a URL.",
   "main": "bin/pushfile",
   "bin": {
     "pushfile": "./bin/pushfile"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib",
+    "develop": "babel --watch src -d lib",
+    "uglify": "uglifyjs lib/helpers.js lib/pushfile.js -o lib/pushfile.min.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/joshfinnie/pushfile.git"
+    "url": "git+https://github.com/joshfinnie/pushfile.git"
   },
   "author": "Josh Finnie <josh@jfin.us>",
   "contributors": [
@@ -31,28 +33,26 @@
   "bugs": {
     "url": "https://github.com/joshfinnie/pushfile/issues"
   },
-  "homepage": "https://github.com/joshfinnie/pushfile",
-  "devDependencies": {
-    "babel-core": "^6.1.2",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.1.3",
-    "babel-preset-es2015": "^6.1.2",
-    "babel-preset-stage-0": "^6.1.2",
-    "gulp": "^3.9.0",
-    "gulp-babel": "^6.1.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-uglify": "^1.4.2",
-    "mocha": "2.3.3"
-  },
+  "homepage": "https://github.com/joshfinnie/pushfile#readme",
   "dependencies": {
-    "aws-sdk": "2.2.15",
-    "commander": "^2.9.0",
-    "copy-paste": "1.1.4",
-    "hashids": "1.0.2",
-    "mime": "1.3.4",
-    "prompt": "0.2.14"
+    "aws-sdk": "^2.332.0",
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "copy-paste": "^1.3.0",
+    "figlet": "^1.2.1",
+    "hashids": "^1.2.2",
+    "inquirer": "^6.2.0",
+    "mime-types": "^2.1.20"
   },
-  "engine": {
-    "node": ">=4.0"
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "uglify-js": "^3.4.9"
   }
 }

@@ -1,38 +1,3 @@
 #!/usr/bin/env node
 
-var opts = require('commander');
-var pushfile = require(__dirname + '/../lib/pushfile');
-
-var version = require(__dirname + '/../package').version;
-
-opts
-  .version(version)
-  .usage('[options] <file ...>')
-  .option('-u, --unique', 'Gives a unique hash for uploaded file.')
-  .option('-c, --configure', 'Create a configuration file.')
-  .option('-v, --version', 'Prints Version');
-
-opts
-  .on('--help', function(){
-    console.log('  Examples:');
-    console.log('');
-    console.log('    $ pushfile -u <FILENAME>');
-    console.log('    $ pushfile <FILENAME>');
-    console.log('    $ pushfile -v');
-    console.log('    $ pushfile -c');
-    console.log('');
-  });
-
-opts.parse(process.argv);
-
-var optsLength = opts.args.length;
-
-if (opts.configure) {
-  pushfile.createConfig();
-}
-else if (optsLength > 0) {
-  pushfile.pushfile(opts.args[0], unique=opts.unique);
-} 
-else if (optsLength <= 0) {
-  console.log("no filename...")
-}
+require('../lib/pushfile.min.js');

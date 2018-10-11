@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "extends": ["airbnb"],
+  "globals": {
+    "describe": true,
+    "it": true
+  },
+  "rules": {
+    "no-console": 0,
+    "max-len": [
+      "error",
+      120
+    ]
+  }
+}

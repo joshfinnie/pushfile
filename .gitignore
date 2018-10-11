@@ -14,5 +14,8 @@ results
 npm-debug.log
 node_modules
 
-src/babel
+lib/helpers.js
+lib/pushfile.js
+.node_repl_history
 config.json
+cat.jpg
