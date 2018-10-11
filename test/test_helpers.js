@@ -7,7 +7,7 @@ const { assert } = chai;
 describe('test hashFile', () => {
   it('should return proper hash of filename', () => {
     hashFile('test/test_of_long_file_name.json', 'test_salt', (result) => {
-      assert.equal('5za6EJ8Qx9uEy5NoMLqoHdK6lpj9ZrcJ1ga.json', result);
+      assert.equal('Qw75JEn5oLhN9Vxjyo4KukxzqxVK0wfjq8X.json', result);
     });
   });
 
