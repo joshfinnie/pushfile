@@ -19,7 +19,7 @@ describe('test hashFile', () => {
 
   it('should return a filename of at least 10 charachers', () => {
     hashFile('tests/test_of_long_file_name.json', 'test_salt', (result) => {
-      assert.atLeast(result.substr(0, result.lastIndexOf('.')).length, 10);
+      assert.isTrue(result.substr(0, result.lastIndexOf('.')).length > 10);
     });
   });
 });
