@@ -1,0 +1,7 @@
+{
+    "awsKey": "<AWS_KEY>",
+    "awsSecret": "<AWS_SECRET>",
+    "s3Bucket": "<S3_BUCKET>",
+    // URL is not required
+    "url": "http://your-custom-domain.com"
+}
