@@ -4,7 +4,7 @@ node_js:
   - "lts/boron"
   - "lts/carbon"
 before_install:
-  - "echo {} > .pushfile.json"
+  - "echo {} > $HOME/.pushfile.json"
 notifications:
   email:
     recipients:
