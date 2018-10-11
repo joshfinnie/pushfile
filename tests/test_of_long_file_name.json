@@ -1,0 +1,212 @@
+[
+	{
+		id: 0,
+		guid: "15a4d197-41c6-441d-ab39-a0d937310831",
+		isActive: true,
+		balance: "$3,473.00",
+		picture: "http://placehold.it/32x32",
+		age: 30,
+		name: "Wilma Solomon",
+		gender: "female",
+		company: "Ginkle",
+		email: "wilmasolomon@ginkle.com",
+		phone: "+1 (938) 540-3483",
+		address: "526 Thornton Street, Murillo, New Mexico, 2164",
+		about: "Eu esse dolore magna reprehenderit sit ex ad excepteur commodo nostrud non. Commodo id elit irure est consequat irure voluptate veniam elit esse eu deserunt mollit. Dolor deserunt aliquip sit exercitation et anim laboris ex ullamco officia ipsum. Sunt eu culpa eiusmod aute minim quis Lorem esse excepteur. Nisi enim tempor aliqua ea ipsum tempor tempor ut eiusmod culpa anim deserunt. Exercitation laborum reprehenderit non mollit sint proident amet enim labore labore excepteur veniam exercitation. Nulla in deserunt aliquip eiusmod incididunt commodo laborum magna id amet fugiat pariatur dolore do. ",
+		registered: "2008-04-07T02:26:10 +04:00",
+		latitude: 28.312188,
+		longitude: -63.697198,
+		tags: [
+			"in",
+			"anim",
+			"cupidatat",
+			"labore",
+			"dolor",
+			"eu",
+			"magna"
+		],
+		friends: [
+			{
+				id: 0,
+				name: "Lawanda Hunter"
+			},
+			{
+				id: 1,
+				name: "Bertha Oneill"
+			},
+			{
+				id: 2,
+				name: "Malinda Bowman"
+			}
+		],
+		randomArrayItem: "lemon"
+	},
+	{
+		id: 1,
+		guid: "b9c2776d-a0b7-4f60-bae9-ba687c188da8",
+		isActive: false,
+		balance: "$1,542.00",
+		picture: "http://placehold.it/32x32",
+		age: 20,
+		name: "Mullen Noble",
+		gender: "male",
+		company: "Musanpoly",
+		email: "mullennoble@musanpoly.com",
+		phone: "+1 (859) 400-2469",
+		address: "720 Durland Place, Sehili, Arizona, 9504",
+		about: "Quis tempor deserunt dolor eu dolor ipsum Lorem ad proident. Velit occaecat Lorem excepteur ea deserunt elit mollit et velit veniam. Anim ad consequat sit amet officia occaecat dolor irure exercitation ullamco ex aliqua. Elit sint officia elit esse. Voluptate excepteur enim elit in proident aliqua ea labore amet eiusmod enim qui exercitation qui. ",
+		registered: "1991-05-27T21:38:01 +04:00",
+		latitude: 41.076684,
+		longitude: -59.090959,
+		tags: [
+			"culpa",
+			"ut",
+			"labore",
+			"in",
+			"ad",
+			"exercitation",
+			"aliqua"
+		],
+		friends: [
+			{
+				id: 0,
+				name: "Farrell Lambert"
+			},
+			{
+				id: 1,
+				name: "Addie Guerra"
+			},
+			{
+				id: 2,
+				name: "Millicent Carlson"
+			}
+		],
+		randomArrayItem: "cherry"
+	},
+	{
+		id: 2,
+		guid: "df84f751-2008-47cd-8d14-8c7382d6d268",
+		isActive: true,
+		balance: "$2,049.00",
+		picture: "http://placehold.it/32x32",
+		age: 31,
+		name: "Latoya Mcfadden",
+		gender: "female",
+		company: "Pawnagra",
+		email: "latoyamcfadden@pawnagra.com",
+		phone: "+1 (934) 571-3812",
+		address: "945 Bay Avenue, Ripley, North Dakota, 8736",
+		about: "Deserunt labore nisi deserunt ad nisi cillum quis pariatur commodo ex. Excepteur reprehenderit enim dolore enim labore aute dolor qui cillum. Esse in dolore fugiat proident sint Lorem aliquip aliqua in eiusmod cillum fugiat. Pariatur minim consequat pariatur eiusmod reprehenderit mollit elit sint eu esse incididunt. Id veniam excepteur culpa aute. Occaecat consectetur esse sint dolor ea laborum aute nisi qui minim sunt velit officia. ",
+		registered: "2009-06-08T20:46:33 +04:00",
+		latitude: -51.184364,
+		longitude: -118.580242,
+		tags: [
+			"esse",
+			"occaecat",
+			"ad",
+			"eiusmod",
+			"eiusmod",
+			"pariatur",
+			"veniam"
+		],
+		friends: [
+			{
+				id: 0,
+				name: "Evangelina Richard"
+			},
+			{
+				id: 1,
+				name: "Jenna Rose"
+			},
+			{
+				id: 2,
+				name: "Susan Snow"
+			}
+		],
+		randomArrayItem: "lemon"
+	},
+	{
+		id: 3,
+		guid: "f681e151-edb7-4862-bd8c-db5c3a635d6b",
+		isActive: true,
+		balance: "$1,495.00",
+		picture: "http://placehold.it/32x32",
+		age: 25,
+		name: "Maxwell Ryan",
+		gender: "male",
+		company: "Zork",
+		email: "maxwellryan@zork.com",
+		phone: "+1 (973) 577-3512",
+		address: "345 Centre Street, Conestoga, Wisconsin, 7078",
+		about: "Non eu cillum ex enim sunt consequat. Incididunt ut pariatur veniam sint exercitation fugiat minim dolor aliquip quis. Sunt aliquip eiusmod excepteur incididunt occaecat nulla pariatur. Aliquip velit Lorem in anim ad exercitation anim cillum fugiat et commodo. Nostrud esse id proident dolor exercitation fugiat consequat minim dolore ex. Culpa officia magna aliqua aliquip irure ullamco elit commodo officia do laboris. Mollit laborum sunt Lorem ea est nisi. ",
+		registered: "1993-09-10T08:01:34 +04:00",
+		latitude: -29.227153,
+		longitude: 19.085798,
+		tags: [
+			"ipsum",
+			"eu",
+			"eu",
+			"occaecat",
+			"nostrud",
+			"labore",
+			"ea"
+		],
+		friends: [
+			{
+				id: 0,
+				name: "Hogan Lindsay"
+			},
+			{
+				id: 1,
+				name: "Solis Morton"
+			},
+			{
+				id: 2,
+				name: "Barron Slater"
+			}
+		],
+		randomArrayItem: "lemon"
+	},
+	{
+		id: 4,
+		guid: "1e90af8e-7cf6-4312-8715-e3539148c88b",
+		isActive: true,
+		balance: "$2,803.00",
+		picture: "http://placehold.it/32x32",
+		age: 20,
+		name: "Katie Mcmahon",
+		gender: "female",
+		company: "Virxo",
+		email: "katiemcmahon@virxo.com",
+		phone: "+1 (913) 432-3426",
+		address: "277 Portal Street, Kent, Washington, 5394",
+		about: "Tempor consectetur do est eiusmod minim cillum excepteur consectetur occaecat commodo occaecat amet. Cillum aute amet proident laborum. Ipsum ullamco cupidatat anim nisi laboris enim magna labore sunt voluptate elit laborum labore. ",
+		registered: "2013-06-27T17:35:41 +04:00",
+		latitude: -42.254222,
+		longitude: 165.458641,
+		tags: [
+			"do",
+			"quis",
+			"laboris",
+			"eiusmod",
+			"in",
+			"veniam",
+			"voluptate"
+		],
+		friends: [
+			{
+				id: 0,
+				name: "Tucker Mullen"
+			},
+			{
+				id: 1,
+				name: "Austin Dickson"
+			},
+			{
+				id: 2,
+				name: "Mccoy Lott"
+			}
+		],
+		randomArrayItem: "lemon"
+	}
+]
