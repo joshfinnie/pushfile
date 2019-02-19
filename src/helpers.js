@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import AWS from 'aws-sdk';
 import Hashids from 'hashids';
-import Copy from 'copy-paste';
+import clipboardy from 'clipboardy';
 import crypto from 'crypto';
 import fs from 'fs';
 import inquirer from 'inquirer';
@@ -108,11 +108,11 @@ const pushFile = (fileName, unique) => {
           console.log('Unable to upload:', err.stack);
         } else if (typeof config.url === 'undefined') {
           console.log('File is available at', uploadData.Location);
-          Copy.copy(uploadData.Location);
+          clipboardy.writeSync(uploadData.Location);
         } else {
           const location = `${config.url}/${newFileName}`;
           console.log('File is available at', location);
-          Copy.copy(location);
+          clipboardy.writeSync(location);
         }
       });
     });

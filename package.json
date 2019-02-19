@@ -1,7 +1,7 @@
 {
   "name": "pushfile",
   "preferGlobal": true,
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Command line app that pushes a file to S3 and gives you a URL.",
   "main": "bin/pushfile",
   "bin": {
@@ -9,9 +9,10 @@
   },
   "scripts": {
     "test": "mocha --require @babel/register test",
-    "build": "babel src -d lib",
-    "develop": "babel --watch src -d lib",
-    "uglify": "uglifyjs lib/helpers.js lib/pushfile.js -o lib/pushfile.min.js"
+    "babel:build": "babel src -d lib",
+    "babel:develop": "babel --watch src -d lib",
+    "uglify": "uglifyjs lib/helpers.js lib/pushfile.js -o lib/pushfile.min.js",
+    "build": "npm run-script babel:build && npm run-script uglify"
   },
   "repository": {
     "type": "git",
@@ -36,27 +37,27 @@
   },
   "homepage": "https://github.com/joshfinnie/pushfile#readme",
   "dependencies": {
-    "aws-sdk": "^2.332.0",
-    "chalk": "^2.4.1",
-    "commander": "^2.19.0",
-    "copy-paste": "^1.3.0",
-    "figlet": "^1.2.1",
-    "hashids": "^1.2.2",
-    "inquirer": "^6.2.0",
-    "mime-types": "^2.1.20"
+    "aws-sdk": "2.406.0",
+    "chalk": "2.4.2",
+    "clipboardy": "1.2.3",
+    "commander": "2.19.0",
+    "figlet": "1.2.1",
+    "hashids": "1.2.2",
+    "inquirer": "6.2.2",
+    "mime-types": "2.1.22"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/register": "^7.0.0",
-    "chai": "^4.2.0",
-    "eslint": "^5.6.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
-    "mocha": "^5.2.0",
-    "uglify-js": "^3.4.9"
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.3.3",
+    "@babel/preset-env": "7.3.1",
+    "@babel/register": "7.0.0",
+    "chai": "4.2.0",
+    "eslint": "5.6.1",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-react": "7.11.1",
+    "mocha": "6.0.0",
+    "uglify-js": "3.4.9"
   }
 }
