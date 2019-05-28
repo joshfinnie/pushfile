@@ -43,7 +43,7 @@
     "commander": "2.19.0",
     "figlet": "1.2.1",
     "hashids": "1.2.2",
-    "inquirer": "6.2.2",
+    "inquirer": "6.3.1",
     "mime-types": "2.1.22"
   },
   "devDependencies": {
