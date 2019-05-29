@@ -1,8 +1,8 @@
 language: node_js
 node_js:
   - "node"
-  - "lts/boron"
   - "lts/carbon"
+  - "lts/dubnium"
 before_install:
   - "echo {} > $HOME/.pushfile.json"
 notifications:
