@@ -2,13 +2,11 @@ import chalk from 'chalk';
 import figlet from 'figlet';
 import commander from 'commander';
 
-import { version } from '../package.json';
-import pushFile, { createConfig } from './helpers';
+import {version} from '../package.json';
+import pushFile, {createConfig} from './helpers';
 
 console.log(
-  chalk.red(
-    figlet.textSync('PushFile!', { horizontalLayout: 'full' }),
-  ),
+  chalk.red(figlet.textSync('PushFile!', {horizontalLayout: 'full'})),
 );
 
 commander

@@ -1,15 +1,14 @@
 {
   "root": true,
-  "extends": ["airbnb"],
+  "extends": ["airbnb", "plugin:prettier/recommended"],
   "globals": {
     "describe": true,
     "it": true
   },
   "rules": {
+    "arrow-parens": ["error", "always"],
+    "max-len": ["error", 120],
     "no-console": 0,
-    "max-len": [
-      "error",
-      120
-    ]
+    "object-curly-spacing": ["error", "never"]
   }
 }
