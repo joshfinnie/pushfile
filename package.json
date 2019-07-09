@@ -39,7 +39,7 @@
   "dependencies": {
     "aws-sdk": "2.406.0",
     "chalk": "2.4.2",
-    "clipboardy": "1.2.3",
+    "clipboardy": "2.1.0",
     "commander": "2.20.0",
     "figlet": "1.2.3",
     "hashids": "1.2.2",
