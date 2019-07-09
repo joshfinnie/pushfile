@@ -29,9 +29,11 @@ const createS3Bucket = () => {
       accessKeyId: config.awsKey,
       secretAccessKey: config.awsSecret,
     });
-    s3Bucket = new AWS.S3({ params: { Bucket: config.s3Bucket } });
+    s3Bucket = new AWS.S3({params: {Bucket: config.s3Bucket}});
   } else {
-    console.log('Looks like your PushFile config file is missing.\nPlease run `pushfile --configuration` to set up.\n');
+    console.log(
+      'Looks like your PushFile config file is missing.\nPlease run `pushfile --configuration` to set up.\n',
+    );
     process.exit(1);
   }
   return s3Bucket;
@@ -43,25 +45,22 @@ const createConfig = () => {
       name: 'awsClientKey',
       type: 'input',
       message: 'Enter your AWS Client Key',
-      validate: value => (
-        value.length ? true : 'Please enter your AWS Client Key'
-      ),
+      validate: (value) =>
+        value.length ? true : 'Please enter your AWS Client Key',
     },
     {
       name: 'awsSecretKey',
       type: 'input',
       message: 'Enter your AWS Secret Key',
-      validate: value => (
-        value.length ? true : 'Please enter your AWS Secret Key'
-      ),
+      validate: (value) =>
+        value.length ? true : 'Please enter your AWS Secret Key',
     },
     {
       name: 'awsS3Bucket',
       type: 'input',
       message: 'Enter your AWS S3 Bucket',
-      validate: value => (
-        value.length ? true : 'Please enter your AWS S3 Bucket'
-      ),
+      validate: (value) =>
+        value.length ? true : 'Please enter your AWS S3 Bucket',
     },
     {
       name: 'customURL',
@@ -71,7 +70,8 @@ const createConfig = () => {
     },
   ];
 
-  inquirer.prompt(questions)
+  inquirer
+    .prompt(questions)
     .then((keys) => {
       const configFile = {
         awsKey: keys.awsClientKey,
@@ -81,19 +81,23 @@ const createConfig = () => {
       if (keys.customURL) {
         configFile.customURL = keys.customURL;
       }
-      fs.writeFile(`${process.env.HOME}/.pushfile.json`, JSON.stringify(configFile), (err) => {
-        if (err) throw err;
-        console.log('Configuration file was written.');
-      });
+      fs.writeFile(
+        `${process.env.HOME}/.pushfile.json`,
+        JSON.stringify(configFile),
+        (err) => {
+          if (err) throw err;
+          console.log('Configuration file was written.');
+        },
+      );
     })
-    .catch(err => (
-      console.log(err)
-    ));
+    .catch((err) => console.log(err));
 };
 
 const pushFile = (fileName, unique) => {
   const bucket = createS3Bucket();
-  const salt = unique ? crypto.randomBytes(12).toString('hex') : 'wR2BXqWhHC9b4kbgl6qNei9d';
+  const salt = unique
+    ? crypto.randomBytes(12).toString('hex')
+    : 'wR2BXqWhHC9b4kbgl6qNei9d';
   hashFile(fileName, salt, (newFileName) => {
     const contentType = mime.lookup(fileName);
     fs.readFile(fileName, (err, fileBuffer) => {
@@ -119,9 +123,4 @@ const pushFile = (fileName, unique) => {
   });
 };
 
-export {
-  createConfig,
-  createS3Bucket,
-  hashFile,
-  pushFile as default,
-};
+export {createConfig, createS3Bucket, hashFile, pushFile as default};

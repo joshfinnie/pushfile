@@ -1,8 +1,8 @@
 import chai from 'chai';
 
-import { hashFile } from '../src/helpers';
+import {hashFile} from '../src/helpers';
 
-const { assert } = chai;
+const {assert} = chai;
 
 describe('test hashFile', () => {
   it('should return proper hash of filename', () => {
