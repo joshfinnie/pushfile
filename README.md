@@ -42,10 +42,4 @@ This will generate a nodemon process that will re-run `npm run build` any time c
 
 ## Changelog
 
-0.6.1 - Updated packages and swapped out `copy-paste` for `clipboardy`.
-
-0.4 - Replaced `Optimist` with `nomnom` for command line args parsing. Bumped all versions and updated AWS SDK to use `upload` instead of `push`.
-
-0.3 - Implenmeted PushFile using the native AWS SDK instead of out-dated package
-
-0.2 - Implemented feature that turns all pushed files public by default.
+[See CHANGELOG.md](CHANGELOG.md)

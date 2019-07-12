@@ -1,7 +1,7 @@
 {
   "name": "pushfile",
   "preferGlobal": true,
-  "version": "0.6.1",
+  "version": "1.0.0",
   "description": "Command line app that pushes a file to S3 and gives you a URL.",
   "main": "bin/pushfile",
   "bin": {
@@ -10,11 +10,10 @@
   "scripts": {
     "test": "mocha --require @babel/register test",
     "format": "eslint --fix src",
-    "babel:build": "babel src -d lib",
-    "babel:develop": "babel --watch src -d lib",
+    "babel": "babel src -d lib",
     "uglify": "uglifyjs lib/helpers.js lib/pushfile.js -o lib/pushfile.min.js",
     "develop": "npm-watch",
-    "build": "npm run-script babel:build && npm run-script uglify"
+    "build": "npm run-script babel && npm run-script uglify"
   },
   "watch": {
     "build": "src/*.js"
