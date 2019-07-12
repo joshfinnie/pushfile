@@ -30,6 +30,16 @@ To create a unique file name, you can use the `-u` flag:
 
     $ pushfile -u /path/to/file.ext
 
+## Development
+
+We have added `npm-watch` to Pushfile to aid in development of this package. To run this code in development mode, simply run the following command:
+
+    $ npm run develop
+
+This will generate a nodemon process that will re-run `npm run build` any time code is changed. To test the changes, you'll need to use the local version of Pushfile. To run that package, run :
+
+    $ ./bin/pushfile <COMMAND>
+
 ## Changelog
 
 0.6.1 - Updated packages and swapped out `copy-paste` for `clipboardy`.
