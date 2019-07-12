@@ -36,7 +36,7 @@ We have added `npm-watch` to Pushfile to aid in development of this package. To 
 
     $ npm run develop
 
-To test the changes, you'll need to use the local version of Pushfile. To run that package, run :
+This will generate a nodemon process that will re-run `npm run build` any time code is changed. To test the changes, you'll need to use the local version of Pushfile. To run that package, run :
 
     $ ./bin/pushfile <COMMAND>
 
