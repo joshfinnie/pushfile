@@ -17,12 +17,8 @@ export default [
       babel({
         exclude: 'node_modules/**',
       }),
-      json({
-        preferConst: true,
-      }),
-      commonjs({
-        include: 'node_modules/**',
-      }),
+      json(),
+      commonjs(),
       autoExternal(),
       terser(),
     ],
