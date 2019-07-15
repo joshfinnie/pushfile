@@ -1,5 +1,12 @@
 # Changelog
 
+1.0.4
+---
+
+* Package updates
+    * Bump aws-sdk from 2.492.0 to 2.493.0
+    * Bump rollup from 1.16.7 to 1.17.0
+
 1.0.0
 ---
 
