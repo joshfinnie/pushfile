@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import AWS from 'aws-sdk';
-import Hashids from 'hashids';
+import Hashids from 'hashids/cjs';
 import clipboardy from 'clipboardy';
 import crypto from 'crypto';
 import fs from 'fs';
