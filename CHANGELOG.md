@@ -1,5 +1,21 @@
 # Changelog
 
+1.1.0
+---
+
+* Package updates
+    * Bump hashids to 2.0.0
+    * Bump commander to 3.0.1
+    * Bump eslint-config-prettier to 6.2.0
+    * Bump aws-sdk to 2.522.0
+    * Bump rollup to 1.20.3
+    * Bump rollup-plugin-commonjs to 10.1.0
+    * Bump inquirer to 7.0.0
+    * Bump figlet to 1.2.4
+    * Bump eslint-utils to 1.4.2
+
+Both `commander` and `hashids` had changes to their APIs. This does not effect our API, but might effect custom commands for users.
+
 1.0.4
 ---
 
