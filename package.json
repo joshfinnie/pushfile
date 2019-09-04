@@ -1,7 +1,7 @@
 {
   "name": "pushfile",
   "preferGlobal": true,
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Command line app that pushes a file to S3 and gives you a URL.",
   "main": "bin/pushfile",
   "bin": {
