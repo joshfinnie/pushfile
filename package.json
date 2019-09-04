@@ -44,7 +44,7 @@
     "clipboardy": "^2.1.0",
     "commander": "^3.0.1",
     "figlet": "^1.2.3",
-    "hashids": "^1.2.2",
+    "hashids": "^2.0.0",
     "inquirer": "^7.0.0",
     "mime-types": "^2.1.24"
   },
