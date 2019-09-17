@@ -11,11 +11,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '12', '10', '8' ]
+    name: Node ${{ matrix.node }} Tests
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: ${{ matrix.node }}
       - run: npm install
       - run: echo {} > $HOME/.pushfile.json
       - run: npm test
@@ -30,6 +34,7 @@ jobs:
           node-version: 10
           registry-url: https://npm.pkg.github.com/
           scope: '@joshfinnie'
+      - run: npm build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_TOKEN}}
