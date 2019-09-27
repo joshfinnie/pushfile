@@ -1,5 +1,20 @@
 # Changelog
 
+1.1.1
+---
+
+* Package updates
+    * Bump eslint-config-prettier to 6.3.0
+    * Bump hashids to 2.0.1 
+    * Bump rollup to 1.21.4
+    * Bump eslint-plugin-prettier to 3.1.1
+    * Bump @babel/cli to 7.6.2
+    * Bump aws-sdk to 2.537.0
+    * Bump @babel/core to 7.6.2
+    * Bump @babel/preset-env to 7.6.2
+    * Bump @babel/register to 7.6.2
+    * Bump rollup-plugin-terser to 5.1.2
+
 1.1.0
 ---
 
