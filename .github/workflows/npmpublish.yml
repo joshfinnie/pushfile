@@ -1,0 +1,39 @@
+name: Node.js Package
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '12', '10', '8' ]
+    name: Node ${{ matrix.node }} Tests
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - run: echo {} > $HOME/.pushfile.json
+      - run: npm test
+
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+      - run: npm install
+      - run: npm run-script build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.PUBLISH_TOKEN}}
