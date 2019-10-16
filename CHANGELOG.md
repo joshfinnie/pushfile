@@ -1,11 +1,26 @@
 # Changelog
 
+1.1.2
+---
+
+* Packgage updates
+    * Bump @babel/cli to 7.6.4
+    * Bump @babel/core to 7.6.4
+    * Bump @babel/preset-env to 7.6.3
+    * Bump aws-sdk to 2.550.0
+    * Bump commander to 3.0.2
+    * Bump eslint-config-prettier to 6.4.0
+    * Bump eslint-plugin-react to 7.16.0
+    * Bump mocha to 6.2.1
+    * Bump rollup to 1.24.0
+    * Bump uglify-js to 3.6.2
+
 1.1.1
 ---
 
 * Package updates
     * Bump eslint-config-prettier to 6.3.0
-    * Bump hashids to 2.0.1 
+    * Bump hashids to 2.0.1
     * Bump rollup to 1.21.4
     * Bump eslint-plugin-prettier to 3.1.1
     * Bump @babel/cli to 7.6.2
