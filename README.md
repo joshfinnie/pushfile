@@ -30,6 +30,20 @@ To create a unique file name, you can use the `-u` flag:
 
     $ pushfile -u /path/to/file.ext
 
+
+### Example
+
+```
+$ pushfile cat.jpg
+____                  _       _____   _   _          _
+|  _ \   _   _   ___  | |__   |  ___| (_) | |   ___  | |
+| |_) | | | | | / __| | '_ \  | |_    | | | |  / _ \ | |
+|  __/  | |_| | \__ \ | | | | |  _|   | | | | |  __/ |_|
+|_|      \__,_| |___/ |_| |_| |_|     |_| |_|  \___| (_)
+
+File is available at https://s3.amazonaws.com/i.jfin.us/MzgYBxMBbwSjywx9QKaRFOxYoDWbxkiyGmP.jpg
+```
+
 ## Development
 
 We have added `npm-watch` to Pushfile to aid in development of this package. To run this code in development mode, simply run the following command:

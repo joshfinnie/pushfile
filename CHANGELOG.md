@@ -1,5 +1,19 @@
 # Changelog
 
+1.1.3
+---
+
+* Packgage updates
+    * Bump @babel/cli to 7.7.0
+    * Bump @babel/core to 7.7.2
+    * Bump @babel/preset-env to 7.7.1
+    * Bump @babel/register to 7.7.0
+    * Bump aws-sdk to 2.576.0
+    * Bump commander to 4.0.1
+    * Bump eslint-config-prettier to 6.7.0
+    * Bump rollup to 1.27.3
+    * Bump uglify-js to 3.6.9 
+
 1.1.2
 ---
 
