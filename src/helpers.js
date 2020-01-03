@@ -9,16 +9,21 @@ import mime from 'mime-types';
 
 const config = require(`${process.env.HOME}/.pushfile.json`); // eslint-disable-line import/no-dynamic-require
 
-const hashFile = (filename, salt, callback) => {
-  let shortFilename;
-  const fd = fs.createReadStream(filename);
-  const hash = crypto.createHash('sha1').setEncoding('hex');
+const hashFile = (filename, salt) => {
+  return new Promise((resolve, reject) => {
+    let shortFilename;
+    const fd = fs.createReadStream(filename);
+    const hash = crypto.createHash('sha1').setEncoding('hex');
 
-  fd.pipe(hash);
-  fd.on('end', () => {
-    hash.end();
-    shortFilename = new Hashids(salt, 10).encodeHex(hash.read());
-    callback(`${shortFilename}.${filename.split('.').pop()}`);
+    fd.pipe(hash);
+    fd.on('end', () => {
+      hash.end();
+      shortFilename = new Hashids(salt, 10).encodeHex(hash.read());
+      resolve(`${shortFilename}.${filename.split('.').pop()}`);
+    });
+    fd.on('error', (err) => {
+      reject(err);
+    });
   });
 };
 
@@ -98,7 +103,7 @@ const pushFile = (fileName, unique) => {
   const salt = unique
     ? crypto.randomBytes(12).toString('hex')
     : 'wR2BXqWhHC9b4kbgl6qNei9d';
-  hashFile(fileName, salt, (newFileName) => {
+  hashFile(fileName, salt).then((newFileName) => {
     const contentType = mime.lookup(fileName);
     fs.readFile(fileName, (err, fileBuffer) => {
       const params = {
