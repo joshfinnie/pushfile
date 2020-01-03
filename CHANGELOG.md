@@ -1,5 +1,22 @@
 # Changelog
 
+1.1.4
+---
+
+* Converting some calls to Promises for future conversion to async.
+* Converted eslint airbnb config to use the "base" version since I do not use react.
+* Package updates
+    * Bump aws-sdk to 2.597.0
+    * Bump rollup to 1.27.14
+    * Bump @babel/register to 7.7.7
+    * Bump @babel/preset-env to 7.7.7
+    * Bump @babel/core to 7.7.7
+    * Bump @babel/cli to 7.7.7
+    * Bump hashids to 2.1.0
+    * Bump prettier to 1.19.1
+    * Bump mime-types to 2.1.25
+    * Bump chalk to 3.0.0
+    
 1.1.3
 ---
 

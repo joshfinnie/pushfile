@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
   "globals": {
     "describe": true,
     "it": true
