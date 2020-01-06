@@ -46,7 +46,7 @@
     "figlet": "1.2.4",
     "hashids": "2.1.0",
     "inquirer": "7.0.1",
-    "mime-types": "2.1.25"
+    "mime-types": "2.1.26"
   },
   "devDependencies": {
     "@babel/cli": "7.7.7",
