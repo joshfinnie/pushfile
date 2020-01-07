@@ -45,7 +45,7 @@
     "commander": "4.0.1",
     "figlet": "1.2.4",
     "hashids": "2.1.0",
-    "inquirer": "7.0.1",
+    "inquirer": "7.0.3",
     "mime-types": "2.1.25"
   },
   "devDependencies": {
