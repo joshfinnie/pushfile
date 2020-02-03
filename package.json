@@ -42,7 +42,7 @@
     "aws-sdk": "2.597.0",
     "chalk": "3.0.0",
     "clipboardy": "2.1.0",
-    "commander": "4.0.1",
+    "commander": "4.1.1",
     "figlet": "1.2.4",
     "hashids": "2.1.0",
     "inquirer": "7.0.1",
