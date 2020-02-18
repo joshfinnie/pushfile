@@ -1,5 +1,28 @@
 # Changelog
 
+1.1.5
+---
+
+* Package updates
+    * Bump aws-sdk to 2.620.0
+    * Bump clipboardy to 2.2.0
+    * Bump commander to 4.1.1
+    * Bump hashids to 2.2.1
+    * Bump inquirer to 7.0.4
+    * Bump mime-types to 2.1.26
+    * Bump @babel/cli to 7.8.4
+    * Bump @babel/core to 7.8.4
+    * Bump @babel/polyfill to 7.8.3
+    * Bump @babel/preset-env to 7.8.4
+    * Bump @babel/register to 7.8.3
+    * Bump eslint to 6.8.0
+    * Bump eslint-config-prettier to 6.10.0
+    * Bump elsint-plugin-import to 2.20.1
+    * Bump mocha to 7.0.1
+    * Bump rollup to 1.31.1
+    * Bump rollup-plugin-terser to 5.2.0
+    * Bump uglify-js to 3.8.0
+
 1.1.4
 ---
 
