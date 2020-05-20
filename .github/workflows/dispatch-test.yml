@@ -3,7 +3,7 @@ on:
   push:
   repository_dispatch:
   schedule:
-    - cron:  '*/5 * * * *'
+    - cron:  '* 4 * * *'
 jobs:
   build:
     name: Run Some Scheduled Thing
