@@ -1,5 +1,9 @@
 # Changelog
 
+2.0.0
+---
+* Dropping support for Node Carbon (v8)
+
 1.2.0
 ---
 * Package update:
