@@ -1,5 +1,31 @@
 # Changelog
 
+1.2.0
+---
+* Package update:
+    * Bump @babel/cli to 7.10.5
+    * Bump @babel/core to 7.10.5
+    * Bump @babel/polyfill to 7.10.4
+    * Bump @babel/preset-env to 7.10.4
+    * Bump @babel/register to 7.10.5
+    * Bump aws-sdk to 2.721.0
+    * Bump chalk to 4.1.0
+    * Bump commander to 6.0.0
+    * Bump eslint to 7.5.0
+    * Bump eslint-config-airbnb-base to 14.2.0
+    * Bump eslint-config-prettier to 6.11.0
+    * Bump eslint-plugin-import to 2.22.0
+    * Bump eslint-plugin-prettier to 3.1.4
+    * Bump figlet to 1.5.0
+    * Bump inquirer to 7.3.3
+    * Bump mime-types to 2.1.27
+    * Bump mocha to 8.0.1
+    * Bump prettier to 2.0.5
+    * Bump rollup to 2.23.0
+    * Bump rollup-plugin-terser to 6.1.0
+    * Bump uglify-js to 3.10.0
+* Modified the base command structure to match Commander 6.0.0.
+
 1.1.5
 ---
 
@@ -39,7 +65,7 @@
     * Bump prettier to 1.19.1
     * Bump mime-types to 2.1.25
     * Bump chalk to 3.0.0
-    
+
 1.1.3
 ---
 
@@ -52,7 +78,7 @@
     * Bump commander to 4.0.1
     * Bump eslint-config-prettier to 6.7.0
     * Bump rollup to 1.27.3
-    * Bump uglify-js to 3.6.9 
+    * Bump uglify-js to 3.6.9
 
 1.1.2
 ---
