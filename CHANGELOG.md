@@ -1,5 +1,22 @@
 # Changelog
 
+2.0.1
+---
+* Package update:
+    * Bump @babel/cli to 7.11.5
+    * Bump @babel/core to 7.11.5
+    * Bump @babel/polyfill to 7.11.5
+    * Bump @babel/preset-env to 7.11.5
+    * Bump @babel/register to 7.11.5
+    * Bump aws-sdk to 2.743.0
+    * Bump commander to 6.1.0
+    * Bump eslint to 7.8.0
+    * Bump prettier to 2.1.1
+    * Bump rollup to 2.26.9
+    * Bump rollup-plugin-terser to 7.0.1
+    * Bump uglify-js to 3.10.3
+
+
 2.0.0
 ---
 * Dropping support for Node Carbon (v8)
