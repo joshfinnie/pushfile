@@ -1,5 +1,20 @@
 # Changelog
 
+2.0.2
+---
+* Package update:
+    * Bump @babel/cli to 7.11.6
+    * Bump @babel/core to 7.11.6
+    * Bump aws-sdk to 2.771.0
+    * Bump eslint to 7.11.0
+    * Bump eslint-config-prettier to 6.12.0
+    * Bump eslint-plugin-import to 2.22.1
+    * Bump prettier to 2.1.2
+    * Bump rollup to 2.29.0
+    * Bump rollup-plugin-terser to 7.0.2
+    * Bump uglify-js to 3.11.2
+
+
 2.0.1
 ---
 * Package update:
