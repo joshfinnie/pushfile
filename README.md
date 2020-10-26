@@ -2,7 +2,7 @@
 
 A node.js command line application that pushes a file to S3 and gives you a URL. Files are public by default.
 
-[![Build Status](https://travis-ci.org/joshfinnie/pushfile.png?branch=master)](https://travis-ci.org/joshfinnie/pushfile)
+[![Tests](https://github.com/joshfinnie/pushfile/workflows/Tests/badge.svg)](https://github.com/joshfinnie/pushfile/actions?query=workflow%3ATests)
 [![Dependency Status](https://david-dm.org/joshfinnie/pushfile.svg?theme=shields.io)](https://david-dm.org/joshfinnie/pushfile)
 [![devDependency Status](https://david-dm.org/joshfinnie/pushfile/dev-status.svg?theme=shields.io)](https://david-dm.org/joshfinnie/pushfile#info=devDependencies)
 [![NPM Version](http://img.shields.io/npm/v/pushfile.svg)](https://www.npmjs.org/package/pushfile)
