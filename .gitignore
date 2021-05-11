@@ -14,8 +14,9 @@ results
 npm-debug.log
 node_modules
 
-lib/helpers.js
-lib/pushfile.js
+.DS_Store
+
+dist/
 .node_repl_history
 config.json
 cat.jpg
