@@ -1,6 +1,16 @@
 {
   "root": true,
-  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "extends": [
+    "airbnb-base",
+    "prettier",
+    "prettier/prettier",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser":"@typescript-eslint/parser",
+  "env": {
+    "es6": true
+  },
   "globals": {
     "describe": true,
     "it": true
@@ -9,6 +19,21 @@
     "arrow-parens": ["error", "always"],
     "max-len": ["error", 120],
     "no-console": 0,
-    "object-curly-spacing": ["error", "never"]
+    "object-curly-spacing": ["error", "never"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }

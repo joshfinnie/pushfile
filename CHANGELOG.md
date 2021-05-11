@@ -1,7 +1,28 @@
 # Changelog
 
+3.0.0
+---
+
+* Dropped support for Node Dubnium (v10)
+* Updated src code to typescript
+* Removed unneccessary support packages with upgrade
+    * Removed Rollup
+    * Removed ESLint
+* Package update:
+    * Bump aws-sdk to 2.902.0
+    * Bump chalk to 4.1.1
+    * Bump commander to 7.2.0
+    * Bump hashid to 2.2.8
+    * Bump inquirer to 8.0.0
+    * Bump mime-type to 2.1.30
+    * Bump chai to 4.3.4
+    * Bump eslint to 7.25.0
+    * Bump eslint-config-airbnb-base to 14.2.1
+    * Bump eslint-config-prettier to 8.3.0
+
 2.0.2
 ---
+
 * Package update:
     * Bump @babel/cli to 7.11.6
     * Bump @babel/core to 7.11.6
@@ -14,9 +35,9 @@
     * Bump rollup-plugin-terser to 7.0.2
     * Bump uglify-js to 3.11.2
 
-
 2.0.1
 ---
+
 * Package update:
     * Bump @babel/cli to 7.11.5
     * Bump @babel/core to 7.11.5
@@ -31,13 +52,14 @@
     * Bump rollup-plugin-terser to 7.0.1
     * Bump uglify-js to 3.10.3
 
-
 2.0.0
 ---
+
 * Dropping support for Node Carbon (v8)
 
 1.2.0
 ---
+
 * Package update:
     * Bump @babel/cli to 7.10.5
     * Bump @babel/core to 7.10.5

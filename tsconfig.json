@@ -1,0 +1,19 @@
+{
+  "files": [
+    "src/helpers.ts",
+    "src/pushfile.ts",
+    "package.json"
+  ],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "allowJs": true,
+    "checkJs": false,
+    "outDir": "../dist",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  }
+}
