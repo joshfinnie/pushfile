@@ -1,5 +1,19 @@
 # Changelog
 
+3.0.1
+---
+* Package update:
+    * Bump @types/node to 15.6.0
+    * Bump @typescript-eslint/eslint-plugin to 4.24.0
+    * Bump @typescript-eslint/parser to 4.24.0
+    * Bump aws-sdk to 2.912.0
+    * Bump eslint to 7.27.0
+    * Bump eslint-plugin-import to 2.23.3
+    * Bump inquirer to 8.1.0
+    * Bump mocha to 8.4.0
+    * Bump prettier to 2.3.0
+    * Bump ts-node to 10.0.0
+
 3.0.0
 ---
 
