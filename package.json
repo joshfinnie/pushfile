@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/joshfinnie/pushfile#readme",
   "dependencies": {
-    "aws-sdk": "2.902.0",
+    "aws-sdk": "2.912.0",
     "chalk": "4.1.1",
     "clipboardy": "2.3.0",
     "commander": "7.2.0",
