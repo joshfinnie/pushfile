@@ -1,15 +1,29 @@
 {
-  "files": ["src/helpers.ts", "src/pushfile.ts", "package.json"],
   "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+
+    "module": "nodenext",
     "target": "esnext",
-    "module": "commonjs",
-    "allowJs": true,
-    "checkJs": false,
-    "outDir": "../dist",
-    "strict": false,
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
-  }
+    "allowSyntheticDefaultImports": true,
+
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["esnext"],
+
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"]
 }

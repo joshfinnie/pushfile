@@ -17,6 +17,12 @@ node_modules
 .DS_Store
 
 dist/
+.claude/
 .node_repl_history
 config.json
 cat.jpg
+
+# Coverage
+coverage/
+.nyc_output/
+*.lcov

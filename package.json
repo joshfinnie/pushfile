@@ -1,24 +1,36 @@
 {
   "name": "pushfile",
+  "publishConfig": {
+    "access": "public"
+  },
   "preferGlobal": true,
-  "version": "3.0.1",
+  "keywords": [
+    "aws",
+    "s3",
+    "uploading",
+    "cli"
+  ],
+  "version": "4.0.0",
+  "type": "module",
   "description": "Command line app that pushes a file to S3 and gives you a URL.",
   "engines": {
-    "node": ">=10"
+    "node": ">=20"
   },
-  "main": "bin/pushfile",
+  "main": "dist/helpers.js",
+  "types": "dist/helpers.d.ts",
   "bin": {
-    "pushfile": "./bin/pushfile"
+    "pushfile": "./dist/cli.js"
   },
   "scripts": {
-    "test": "mocha -r ts-node/register 'test/**/*.ts'",
-    "format": "eslint --fix src",
-    "format:ci": "eslint src",
-    "develop": "tsc --watch",
-    "build": "tsc"
-  },
-  "watch": {
-    "build": "src/*.js"
+    "build": "tsup --minify",
+    "link": "npm link",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "format": "biome check --fix",
+    "format:ci": "biome check",
+    "ci": "pnpm run test && pnpm run typecheck && pnpm run format:ci"
   },
   "repository": {
     "type": "git",
@@ -43,10 +55,11 @@
   },
   "homepage": "https://github.com/joshfinnie/pushfile#readme",
   "dependencies": {
-    "aws-sdk": "^2.1692.0",
+    "@aws-sdk/client-s3": "^3.940.0",
     "chalk": "^5.6.2",
     "clipboardy": "^5.0.1",
     "commander": "^14.0.2",
+    "cosmiconfig": "^9.0.0",
     "figlet": "^1.9.4",
     "hashids": "^2.3.0",
     "inquirer": "^13.0.1",
@@ -54,17 +67,12 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.7",
-    "@types/chai": "^5.2.3",
-    "@types/commander": "^2.12.5",
-    "@types/figlet": "^1.7.0",
-    "@types/inquirer": "^9.0.9",
     "@types/mime-types": "^3.0.1",
-    "@types/mocha": "^10.0.10",
     "@types/node": "^24.10.1",
-    "chai": "^6.2.1",
-    "mocha": "^11.7.5",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "@vitest/coverage-v8": "4.0.14",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14"
   },
   "packageManager": "pnpm@10.22.0+sha512.bf049efe995b28f527fd2b41ae0474ce29186f7edcb3bf545087bd61fbbebb2bf75362d1307fda09c2d288e1e499787ac12d4fcb617a974718a6051f2eee741c"
 }

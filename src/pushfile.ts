@@ -1,31 +1,41 @@
-import chalk from 'chalk';
-import {Command} from 'commander';
-import figlet from 'figlet';
-import {version} from '../package.json';
-import pushFile, {createConfig} from './helpers';
+import clipboardy from 'clipboardy';
+import crypto from 'crypto';
+import fs from 'fs/promises';
+import mime from 'mime-types';
+import {hashFile} from './helpers/hashFile.js';
+import {S3Client} from './helpers/S3Client.js';
+import {validateFile} from './helpers/validateFile.js';
 
-console.log(
-  chalk.red(figlet.textSync('PushFile!', {horizontalLayout: 'full'})),
-);
+// -----------------------------
+// pushFile
+// -----------------------------
+export async function pushFile(
+  fileName: string,
+  unique: boolean,
+): Promise<void> {
+  // Validate file before processing
+  await validateFile(fileName);
 
-const program = new Command();
+  const s3 = new S3Client();
 
-program
-  .version(version)
-  .usage('[options] <file ...>')
-  .option('-u, --unique', 'Gives a unique hash for uploaded file.')
-  .option('-c, --configure', 'Create a configuration file.');
+  const salt = unique
+    ? crypto.randomBytes(12).toString('hex')
+    : 'wR2BXqWhHC9b4kbgl6qNei9d';
 
-program.parse(process.argv);
+  const hashed = await hashFile(fileName, salt);
+  const contentType = mime.lookup(fileName);
+  const buffer = await fs.readFile(fileName);
 
-const options = program.opts();
+  const request = s3.createPutRequest(hashed, buffer, contentType);
 
-const argsLength = program.args.length;
+  await s3.put(request);
 
-if (options.configure) {
-  createConfig();
-} else if (argsLength > 0) {
-  pushFile(program.args[0], options.unique);
-} else if (argsLength <= 0) {
-  console.log('no filename...');
+  const url = s3.customUrl
+    ? `${s3.customUrl}/${hashed}`
+    : `https://s3.amazonaws.com/${request.Bucket}/${request.Key}`;
+
+  console.log('File is available at', url);
+  clipboardy.writeSync(url);
 }
+
+export default pushFile;

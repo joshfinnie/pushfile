@@ -4,22 +4,23 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
-
+        node-version: [20.x, 22.x, 24.x]
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: echo {} > $HOME/.pushfile.json
-    - run: npm install
-    - run: npm run format:ci
-    - run: npm test
-      env:
-        CI: true
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10.22.0
+      - run: echo {} > $HOME/.pushfile.json
+      - run: pnpm install
+      - run: pnpm run build
+      - run: pnpm run ci
+        env:
+          CI: true
