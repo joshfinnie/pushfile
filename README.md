@@ -14,6 +14,7 @@ A fast, modern Node.js command-line tool that uploads files to Amazon S3 and ins
 - Support for unique file hashing (cache-busting)
 - Interactive configuration wizard
 - Environment variable support
+- Comprehensive debug logging with verbose mode
 - Modern ES modules and TypeScript
 - Comprehensive input validation
 - Helpful error messages
@@ -101,6 +102,7 @@ Options:
   -h, --help         Display help information
   -c, --configure    Create or update your configuration file
   -u, --unique       Generate a unique hash for the uploaded file
+  -v, --verbose      Enable verbose debug logging
 ```
 
 ### Examples
@@ -122,6 +124,73 @@ pushfile -u screenshot.png
 ```bash
 pushfile --configure
 # Starts interactive configuration wizard
+```
+
+**Enable debug logging:**
+```bash
+pushfile -v cat.jpg
+# Shows detailed debug output
+```
+
+## Debug Logging
+
+Pushfile includes comprehensive debug logging to help troubleshoot issues. There are two ways to enable debug output:
+
+### Option 1: Verbose Flag (Recommended)
+
+Use the `-v` or `--verbose` flag to enable all debug output:
+
+```bash
+pushfile -v myfile.txt
+```
+
+This will show detailed logs including:
+- Configuration loading and validation
+- File validation steps
+- S3 client initialization
+- File hashing progress
+- Upload progress and results
+
+### Option 2: DEBUG Environment Variable
+
+For more granular control, use the `DEBUG` environment variable:
+
+```bash
+# Enable all pushfile debug logs
+DEBUG=pushfile:* pushfile myfile.txt
+
+# Enable specific modules only
+DEBUG=pushfile:main,pushfile:s3 pushfile myfile.txt
+
+# Available debug namespaces:
+# - pushfile:cli      - CLI argument parsing and flow
+# - pushfile:config   - Configuration loading and validation
+# - pushfile:validate - File validation
+# - pushfile:main     - Main upload logic
+# - pushfile:s3       - S3 client operations
+```
+
+### Debug Output Example
+
+```bash
+$ pushfile -v test.jpg
+  pushfile:cli CLI started with options: { unique: false, verbose: true } +0ms
+  pushfile:cli File argument: test.jpg +1ms
+  pushfile:cli Starting file upload process +0ms
+  pushfile:main Starting file upload: test.jpg (unique: false) +0ms
+  pushfile:validate Validating file: test.jpg +0ms
+  pushfile:validate Checking if file exists... +0ms
+  pushfile:validate File exists +2ms
+  pushfile:validate Checking file readability... +0ms
+  pushfile:validate File is readable +0ms
+  pushfile:config Loading configuration... +0ms
+  pushfile:config Config file found: /Users/user/project/.pushfilerc.json +1ms
+  pushfile:s3 Initializing S3 client... +0ms
+  pushfile:s3 S3 client initialized for region: us-east-1 +15ms
+  pushfile:main Hashing file... +0ms
+  pushfile:s3 Sending PutObject request: bucket=my-bucket, key=abc123.jpg +25ms
+  pushfile:s3 Upload successful: ETag="xyz789" +543ms
+File is available at https://s3.amazonaws.com/my-bucket/abc123.jpg
 ```
 
 ## Troubleshooting

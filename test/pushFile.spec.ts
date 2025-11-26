@@ -1,5 +1,7 @@
 import {beforeEach, describe, expect, it, vi} from 'vitest';
 
+import type {S3Client as S3ClientType} from '../src/helpers/S3Client';
+
 // ----- MOCKS ----- //
 vi.mock('../src/helpers/S3Client', () => {
   return {
@@ -99,7 +101,7 @@ describe('pushFile', () => {
     vi.mocked(S3Client).mockClear();
 
     // Create a new mock with customUrl set
-    vi.mocked(S3Client).mockImplementation(function () {
+    vi.mocked(S3Client).mockImplementation(function (this: S3ClientType) {
       this.createPutRequest = vi.fn((filename, buffer, contentType) => ({
         Bucket: 'bucket',
         Key: filename,
@@ -111,9 +113,9 @@ describe('pushFile', () => {
       this.put = vi.fn().mockResolvedValue('success');
       this.customUrl = 'https://cdn.example.com';
       this.s3Bucket = 'bucket';
-    } as any);
+    });
 
-    const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+    const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => null);
 
     await pushFile('file.txt', false);
 
@@ -131,7 +133,8 @@ describe('pushFile', () => {
   it('uses S3 URL when no custom URL configured', async () => {
     // Reset the S3Client mock to ensure customUrl is undefined
     vi.mocked(S3Client).mockClear();
-    vi.mocked(S3Client).mockImplementation(function () {
+
+    vi.mocked(S3Client).mockImplementation(function (this: S3ClientType) {
       this.createPutRequest = vi.fn((filename, buffer, contentType) => ({
         Bucket: 'bucket',
         Key: filename,
@@ -143,9 +146,9 @@ describe('pushFile', () => {
       this.put = vi.fn().mockResolvedValue('success');
       this.customUrl = undefined;
       this.s3Bucket = 'bucket';
-    } as any);
+    });
 
-    const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+    const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => null);
 
     await pushFile('file.txt', false);
 
@@ -161,9 +164,11 @@ describe('pushFile', () => {
   });
 
   it('handles S3 upload failures', async () => {
-    // Clear and recreate mock to throw error
+    // Clear previous mocks
     vi.mocked(S3Client).mockClear();
-    vi.mocked(S3Client).mockImplementation(function () {
+
+    // Provide a typed mock
+    vi.mocked(S3Client).mockImplementation(function (this: S3ClientType) {
       this.createPutRequest = vi.fn((filename, buffer, contentType) => ({
         Bucket: 'bucket',
         Key: filename,
@@ -175,7 +180,7 @@ describe('pushFile', () => {
       this.put = vi.fn().mockRejectedValue(new Error('S3 upload failed'));
       this.customUrl = undefined;
       this.s3Bucket = 'bucket';
-    } as any);
+    });
 
     await expect(pushFile('file.txt', false)).rejects.toThrow(
       'S3 upload failed',

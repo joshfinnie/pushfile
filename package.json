@@ -59,6 +59,7 @@
     "clipboardy": "^5.0.1",
     "commander": "^14.0.2",
     "cosmiconfig": "^9.0.0",
+    "debug": "^4.4.3",
     "figlet": "^1.9.4",
     "hashids": "^2.3.0",
     "inquirer": "^13.0.1",
@@ -66,6 +67,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.7",
+    "@types/debug": "^4.1.12",
     "@types/mime-types": "^3.0.1",
     "@types/node": "^24.10.1",
     "@vitest/coverage-v8": "4.0.14",

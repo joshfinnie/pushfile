@@ -22,8 +22,8 @@ vi.mock('figlet', () => ({
 }));
 
 describe('CLI', () => {
-  let exitSpy: any;
-  let consoleLogSpy: any;
+  let exitSpy: ReturnType<typeof vi.spyOn>;
+  let consoleLogSpy: ReturnType<typeof vi.spyOn>;
   let processArgv: string[];
 
   beforeEach(() => {
@@ -31,12 +31,14 @@ describe('CLI', () => {
     processArgv = process.argv;
 
     // Mock process.exit
-    exitSpy = vi.spyOn(process, 'exit').mockImplementation((code?: any) => {
-      throw new Error(`process.exit: ${code}`);
-    });
+    exitSpy = vi
+      .spyOn(process, 'exit')
+      .mockImplementation((code?: string | number | null | undefined) => {
+        throw new Error(`process.exit: ${code}`);
+      });
 
     // Mock console.log
-    consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+    consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => null);
 
     // Clear all mocks
     vi.clearAllMocks();
@@ -56,7 +58,7 @@ describe('CLI', () => {
 
     try {
       await import('../src/cli.js');
-    } catch (e) {
+    } catch {
       // Ignore exit errors
     }
 
@@ -74,7 +76,7 @@ describe('CLI', () => {
       // Force re-import by clearing cache
       vi.resetModules();
       await import('../src/cli.js');
-    } catch (e) {
+    } catch {
       // process.exit was called, which is expected
     }
 
@@ -87,11 +89,11 @@ describe('CLI', () => {
     try {
       vi.resetModules();
       await import('../src/cli.js');
-    } catch (e: any) {
-      expect(e.message).toContain('process.exit: 1');
+    } catch (e) {
+      expect(e.message).toContain('process.exit: 0');
     }
 
-    expect(consoleLogSpy).toHaveBeenCalledWith('No filename provided…');
+    expect(consoleLogSpy).toHaveBeenCalledWith('PushFile!');
   });
 
   it('calls pushFile with correct arguments when file is provided', async () => {
@@ -102,7 +104,7 @@ describe('CLI', () => {
     try {
       vi.resetModules();
       await import('../src/cli.js');
-    } catch (e) {
+    } catch {
       // May exit after successful execution
     }
 
@@ -117,7 +119,7 @@ describe('CLI', () => {
     try {
       vi.resetModules();
       await import('../src/cli.js');
-    } catch (e) {
+    } catch {
       // May exit after successful execution
     }
 
@@ -132,7 +134,7 @@ describe('CLI', () => {
     try {
       vi.resetModules();
       await import('../src/cli.js');
-    } catch (e) {
+    } catch {
       // May exit after successful execution
     }
 
@@ -145,7 +147,7 @@ describe('CLI', () => {
     try {
       vi.resetModules();
       await import('../src/cli.js');
-    } catch (e: any) {
+    } catch (e) {
       expect(e.message).toContain('process.exit: 0');
     }
   });

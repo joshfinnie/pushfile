@@ -71,8 +71,8 @@ This document outlines all the tasks needed to bring the pushfile package up to 
 ### 8. Fix Package Entry Points
 
 - [x] Change `"main": "bin/pushfile"` to `"main": "./dist/pushfile.js"`
-- [ ] Add `"types": "./dist/pushfile.d.ts"`
-- [ ] Consider adding `"exports"` field for modern Node.js:
+- [x] Add `"types": "./dist/pushfile.d.ts"`
+- [x] Consider adding `"exports"` field for modern Node.js:
 
   ```json
   "exports": {
@@ -100,14 +100,14 @@ This document outlines all the tasks needed to bring the pushfile package up to 
 ### 11. Modernize Test Code
 
 - [x] Replace deprecated `.substr()` with `.substring()` or `.slice()` in `test/helpers.spec.ts:27`
-- [ ] Add more test coverage for edge cases
-- [ ] Consider adding tests for the main pushfile function
+- [x] Add more test coverage for edge cases
+- [x] Consider adding tests for the main pushfile function
 
 ### 12. Add Test Coverage
 
-- [ ] Install `c8` for coverage reporting
-- [ ] Add `"coverage"` script: `"coverage": "c8 vitest"`
-- [ ] Add coverage thresholds
+- [x] Install `c8` for coverage reporting
+- [x] Add `"coverage"` script: `"coverage": "c8 vitest"`
+- [x] Add coverage thresholds
 - [ ] Upload coverage to codecov.io or coveralls
 
 ### 13. Add Type Checking to Tests
@@ -159,14 +159,14 @@ This document outlines all the tasks needed to bring the pushfile package up to 
 
 ### 18. Improve README.md
 
-- [ ] Add badges (build status, npm version, license, etc.)
-- [ ] Update installation instructions (mention pnpm)
-- [ ] Add Node.js version requirement clearly
+- [x] Add badges (build status, npm version, license, etc.)
+- [x] Update installation instructions (mention pnpm)
+- [x] Add Node.js version requirement clearly
 - [ ] Add screenshot or demo GIF
 - [ ] Add troubleshooting section
 - [ ] Document all CLI options clearly
 - [ ] Add API documentation if package can be used as a library
-- [ ] Update development section to mention TypeScript
+- [x] Update development section to mention TypeScript
 
 ### 19. Add CONTRIBUTING.md
 
