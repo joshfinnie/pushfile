@@ -1,9 +1,5 @@
 {
-  "files": [
-    "src/helpers.ts",
-    "src/pushfile.ts",
-    "package.json"
-  ],
+  "files": ["src/helpers.ts", "src/pushfile.ts", "package.json"],
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",

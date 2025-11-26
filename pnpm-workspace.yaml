@@ -1,0 +1,3 @@
+onlyBuiltDependencies:
+  - aws-sdk
+  - unrs-resolver

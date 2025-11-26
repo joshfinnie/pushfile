@@ -16,30 +16,22 @@
     "registered": "2008-04-07T02:26:10 +04:00",
     "latitude": 28.312188,
     "longitude": -63.697198,
-    "tags": [
-      "in",
-      "anim",
-      "cupidatat",
-      "labore",
-      "dolor",
-      "eu",
-      "magna"
-        ],
-        "friends": [
-          {
-            "id": 0,
-            "name": "Lawanda Hunter"
-          },
-          {
-            "id": 1,
-            "name": "Bertha Oneill"
-          },
-          {
-            "id": 2,
-            "name": "Malinda Bowman"
-          }
-        ],
-        "randomArrayItem": "lemon"
+    "tags": ["in", "anim", "cupidatat", "labore", "dolor", "eu", "magna"],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Lawanda Hunter"
+      },
+      {
+        "id": 1,
+        "name": "Bertha Oneill"
+      },
+      {
+        "id": 2,
+        "name": "Malinda Bowman"
+      }
+    ],
+    "randomArrayItem": "lemon"
   },
   {
     "id": 1,
@@ -58,15 +50,7 @@
     "registered": "1991-05-27T21:38:01 +04:00",
     "latitude": 41.076684,
     "longitude": -59.090959,
-    "tags": [
-      "culpa",
-      "ut",
-      "labore",
-      "in",
-      "ad",
-      "exercitation",
-      "aliqua"
-    ],
+    "tags": ["culpa", "ut", "labore", "in", "ad", "exercitation", "aliqua"],
     "friends": [
       {
         "id": 0,
@@ -142,15 +126,7 @@
     "registered": "1993-09-10T08:01:34 +04:00",
     "latitude": -29.227153,
     "longitude": 19.085798,
-    "tags": [
-      "ipsum",
-      "eu",
-      "eu",
-      "occaecat",
-      "nostrud",
-      "labore",
-      "ea"
-    ],
+    "tags": ["ipsum", "eu", "eu", "occaecat", "nostrud", "labore", "ea"],
     "friends": [
       {
         "id": 0,
@@ -184,15 +160,7 @@
     "registered": "2013-06-27T17:35:41 +04:00",
     "latitude": -42.254222,
     "longitude": 165.458641,
-    "tags": [
-      "do",
-      "quis",
-      "laboris",
-      "eiusmod",
-      "in",
-      "veniam",
-      "voluptate"
-    ],
+    "tags": ["do", "quis", "laboris", "eiusmod", "in", "veniam", "voluptate"],
     "friends": [
       {
         "id": 0,

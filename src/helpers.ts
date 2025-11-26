@@ -1,8 +1,8 @@
 import {S3} from 'aws-sdk';
-import Hashids from 'hashids';
 import clipboardy from 'clipboardy';
 import crypto from 'crypto';
 import fs from 'fs';
+import Hashids from 'hashids';
 import inquirer from 'inquirer';
 import mime from 'mime-types';
 
