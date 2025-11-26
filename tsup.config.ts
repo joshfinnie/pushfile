@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsup';
+import {defineConfig} from 'tsup';
 
 export default defineConfig({
   entry: ['src/cli.ts', 'src/helpers.ts'],

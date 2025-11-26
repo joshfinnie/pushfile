@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
 import chalk from 'chalk';
-import { Command } from 'commander';
+import {Command} from 'commander';
 import figlet from 'figlet';
 import packageData from '../package.json' with {type: 'json'};
-import { createConfig } from './helpers/createConfig.js';
+import {createConfig} from './helpers/createConfig.js';
 import pushFile from './pushfile.js';
 
 // Banner
 console.log(
-  chalk.red(figlet.textSync('PushFile!', { horizontalLayout: 'full' })),
+  chalk.red(figlet.textSync('PushFile!', {horizontalLayout: 'full'})),
 );
 
 const program = new Command();
@@ -36,7 +36,7 @@ if (options.configure) {
 }
 
 if (!fileArg) {
-  program.help()
+  program.help();
   process.exit(0);
 }
 

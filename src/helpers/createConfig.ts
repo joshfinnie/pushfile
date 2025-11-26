@@ -1,11 +1,11 @@
 import fs from 'fs/promises';
 import inquirer from 'inquirer';
 import path from 'path';
-import { CONFIG_QUESTIONS } from '../config.js';
-import type { IConfig } from '../types/helpers.js';
+import {CONFIG_QUESTIONS} from '../config.js';
+import type {IConfig} from '../types/helpers.js';
 
 export function buildConfigFromAnswers(answers: Partial<IConfig>): IConfig {
-  const { awsKey, awsSecret, s3Bucket, customURL } = answers;
+  const {awsKey, awsSecret, s3Bucket, customURL} = answers;
 
   if (!awsKey || !awsSecret || !s3Bucket) {
     throw new Error('Missing required fields');
@@ -15,7 +15,7 @@ export function buildConfigFromAnswers(answers: Partial<IConfig>): IConfig {
     awsKey,
     awsSecret,
     s3Bucket,
-    ...(customURL ? { customURL } : {}),
+    ...(customURL ? {customURL} : {}),
   };
 
   return finalConfig;

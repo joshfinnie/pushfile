@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { hashFile } from '../src/helpers/hashFile';
+import {describe, expect, it} from 'vitest';
+import {hashFile} from '../src/helpers/hashFile';
 
 describe('hashFile', () => {
   const filename = 'test/test_of_long_file_name.json';

@@ -1,5 +1,5 @@
-import { S3Client as AwsS3Client, PutObjectCommand } from '@aws-sdk/client-s3';
-import { loadConfig } from './loadConfig.js';
+import {S3Client as AwsS3Client, PutObjectCommand} from '@aws-sdk/client-s3';
+import {loadConfig} from './loadConfig.js';
 
 export class S3Client {
   public client: AwsS3Client;

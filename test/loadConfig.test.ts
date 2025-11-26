@@ -1,14 +1,13 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-
-import type { IConfig } from '../src/types/helpers.js';
-import { loadConfig } from '../src/helpers/loadConfig.js';
+import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
+import {loadConfig} from '../src/helpers/loadConfig.js';
+import type {IConfig} from '../src/types/helpers.js';
 
 const OLD_ENV = process.env;
 
 describe('loadConfig', () => {
   beforeEach(() => {
     vi.resetModules();
-    process.env = { ...OLD_ENV };
+    process.env = {...OLD_ENV};
   });
 
   afterEach(() => {

@@ -4,12 +4,7 @@
     "access": "public"
   },
   "preferGlobal": true,
-  "keywords": [
-    "aws",
-    "s3",
-    "uploading",
-    "cli"
-  ],
+  "keywords": ["aws", "s3", "uploading", "cli"],
   "version": "4.0.0",
   "type": "module",
   "description": "Command line app that pushes a file to S3 and gives you a URL.",
@@ -20,6 +15,10 @@
   "types": "dist/helpers.d.ts",
   "bin": {
     "pushfile": "./dist/cli.js"
+  },
+  "exports": {
+    "types": "./dist/cli.d.ts",
+    "default": "./dist/cli.js"
   },
   "scripts": {
     "build": "tsup --minify",

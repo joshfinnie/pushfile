@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
 
 // Mock modules before importing cli
 vi.mock('../src/helpers/createConfig.js', () => ({
@@ -60,11 +60,13 @@ describe('CLI', () => {
       // Ignore exit errors
     }
 
-    expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('PushFile!'));
+    expect(consoleLogSpy).toHaveBeenCalledWith(
+      expect.stringContaining('PushFile!'),
+    );
   });
 
   it('calls createConfig when --configure flag is used', async () => {
-    const { createConfig } = await import('../src/helpers/createConfig.js');
+    const {createConfig} = await import('../src/helpers/createConfig.js');
 
     process.argv = ['node', 'cli.js', '--configure'];
 

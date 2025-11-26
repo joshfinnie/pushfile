@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest';
+import {describe, expect, it} from 'vitest';
 
-import { buildConfigFromAnswers } from '../src/helpers/createConfig.js';
+import {buildConfigFromAnswers} from '../src/helpers/createConfig.js';
 
 describe('buildConfigFromAnswers', () => {
   it('creates config with all fields', () => {

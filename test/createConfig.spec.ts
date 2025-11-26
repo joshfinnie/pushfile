@@ -1,8 +1,8 @@
 import * as fs from 'fs/promises';
 import inquirer from 'inquirer';
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
 
-import { createConfig } from '../src/helpers/createConfig.js'
+import {createConfig} from '../src/helpers/createConfig.js';
 
 vi.mock('inquirer');
 vi.mock('fs/promises');
