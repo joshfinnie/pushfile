@@ -14,6 +14,11 @@ const debug = createDebug('pushfile:cli');
 console.log(
   chalk.red(figlet.textSync('PushFile!', {horizontalLayout: 'full'})),
 );
+console.warn(
+  chalk.yellow(
+    'WARNING: pushfile is deprecated and no longer maintained. Use at your own risk.',
+  ),
+);
 
 const program = new Command();
 

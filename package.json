@@ -5,14 +5,12 @@
   },
   "preferGlobal": true,
   "keywords": ["aws", "s3", "uploading", "cli"],
-  "version": "4.0.1",
+  "version": "5.0.0",
   "type": "module",
-  "description": "Command line app that pushes a file to S3 and gives you a URL.",
+  "description": "[DEPRECATED] Command line app that pushes a file to S3 and gives you a URL.",
   "engines": {
     "node": ">=20"
   },
-  "main": "dist/helpers.js",
-  "types": "dist/helpers.d.ts",
   "bin": {
     "pushfile": "./dist/cli.js"
   },

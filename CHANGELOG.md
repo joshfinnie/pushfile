@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.0.0] - 2026-05-19
+
+### Deprecated
+- This package is no longer maintained. v5.0.0 is the final release.
+
+### Changed
+- Added deprecation warning printed on every CLI invocation
+- Removed broken `main`/`types` package.json fields referencing non-existent `dist/helpers.js`
+
 ## [4.0.1] - 2026-05-19
 
 ### Changed

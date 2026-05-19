@@ -1,5 +1,7 @@
 # pushfile
 
+> **Deprecated:** This project is no longer maintained. No further updates, bug fixes, or security patches will be released. Use at your own risk.
+
 [![Tests](https://github.com/joshfinnie/pushfile/workflows/Tests/badge.svg)](https://github.com/joshfinnie/pushfile/actions)
 [![npm version](https://badge.fury.io/js/pushfile.svg)](https://www.npmjs.com/package/pushfile)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -307,14 +309,20 @@ pushfile /path/to/test-file
 ```
 pushfile/
 ├── src/
-│   ├── cli.ts        # CLI entry point
-│   └── helpers.ts    # Core functionality
+│   ├── cli.ts              # CLI entry point
+│   ├── pushfile.ts         # Core upload logic
+│   ├── config.ts           # Configuration types
+│   └── helpers/
+│       ├── createConfig.ts # Interactive config wizard
+│       ├── hashFile.ts     # File hashing
+│       ├── loadConfig.ts   # Config loading
+│       ├── S3Client.ts     # AWS S3 wrapper
+│       └── validateFile.ts # File validation
 ├── test/
-│   └── helpers.spec.ts
-├── dist/             # Compiled output
-├── tsconfig.json     # TypeScript config
-├── tsup.config.ts    # Build config
-└── biome.json        # Linting/formatting config
+├── dist/                   # Compiled output
+├── tsconfig.json           # TypeScript config
+├── tsup.config.ts          # Build config
+└── biome.json              # Linting/formatting config
 ```
 
 ## Contributing
