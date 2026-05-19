@@ -12,6 +12,7 @@ vi.mock('../src/pushfile.js', () => ({
 vi.mock('chalk', () => ({
   default: {
     red: (text: string) => text,
+    yellow: (text: string) => text,
   },
 }));
 

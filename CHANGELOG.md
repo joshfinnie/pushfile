@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.0.1] - 2026-05-19
+
+### Changed
+- Updated all dependencies to latest versions
+- Pinned vite to >=7.3.2 to resolve security advisories (CVE via fast-xml-parser, rollup, vite)
+- Migrated Biome configuration schema to 2.4.15
+- Added `ignoreDeprecations: "6.0"` to tsconfig for TypeScript 6 compatibility
+
 ## [4.0.0] - 2024-11-26
 
 ### Breaking Changes
